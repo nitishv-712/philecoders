@@ -116,6 +116,10 @@ export default function Navbar() {
               style={{ background: "linear-gradient(90deg, #10274b 0%, #0170f4 100%)" }}
             >
               {navbar.cta}
+            </motion.a>
+
+            <motion.button
+              onClick={() => setIsOpen(!isOpen)}
               whileTap={{ scale: 0.9 }}
               className="md:hidden w-9 h-9 rounded-full flex items-center justify-center bg-[#e8f2fe] dark:bg-[#1f3557] text-[#0157c2] dark:text-[#8fbbf9]"
             >
