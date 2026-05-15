@@ -16,24 +16,24 @@ export default function CTA() {
     <section
       ref={ref}
       className="relative w-full min-h-screen flex flex-col items-center justify-center overflow-hidden py-32 px-5 sm:px-8"
-      style={{ background: "#f5f3ff" }}
+      style={{ background: "#fafafa" }}
     >
       {/* Background mesh blobs */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div style={{
           position: "absolute", top: "-10%", left: "-5%",
           width: "55%", height: "65%",
-          background: "radial-gradient(ellipse, rgba(124,58,237,0.12) 0%, transparent 70%)",
+          background: "radial-gradient(ellipse, rgba(124,58,237,0.06) 0%, transparent 70%)",
         }} />
         <div style={{
           position: "absolute", bottom: "-15%", right: "-8%",
           width: "60%", height: "70%",
-          background: "radial-gradient(ellipse, rgba(1,112,244,0.10) 0%, transparent 70%)",
+          background: "radial-gradient(ellipse, rgba(1,112,244,0.05) 0%, transparent 70%)",
         }} />
         <div style={{
           position: "absolute", top: "40%", left: "35%",
           width: "40%", height: "50%",
-          background: "radial-gradient(ellipse, rgba(5,150,105,0.07) 0%, transparent 70%)",
+          background: "radial-gradient(ellipse, rgba(5,150,105,0.04) 0%, transparent 70%)",
         }} />
       </div>
 
@@ -41,7 +41,7 @@ export default function CTA() {
       <svg
         aria-hidden="true"
         className="absolute inset-0 w-full h-full pointer-events-none"
-        style={{ opacity: 0.35 }}
+        style={{ opacity: 0.18 }}
       >
         <defs>
           <pattern id="dots" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">

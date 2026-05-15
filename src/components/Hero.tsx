@@ -81,16 +81,16 @@ export default function Hero() {
     <section
       id="home"
       ref={ref}
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden dot-grid"
-      style={{ background: "linear-gradient(160deg, #ede9fe 0%, #e0eeff 40%, #f0f6ff 70%, #faf5ff 100%)" }}
+      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
+      style={{ background: "#fafafa" }}
     >
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/4 left-1/3 w-[600px] h-[600px] rounded-full"
-          style={{ background: "radial-gradient(circle, rgba(124,58,237,0.10) 0%, transparent 70%)" }} />
+          style={{ background: "radial-gradient(circle, rgba(124,58,237,0.06) 0%, transparent 70%)" }} />
         <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] rounded-full"
-          style={{ background: "radial-gradient(circle, rgba(1,112,244,0.08) 0%, transparent 70%)" }} />
-        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full"
-          style={{ background: "radial-gradient(circle, rgba(5,150,105,0.05) 0%, transparent 70%)" }} />
+          style={{ background: "radial-gradient(circle, rgba(1,112,244,0.05) 0%, transparent 70%)" }} />
+        <div className="absolute bottom-1/4 left-1/4 w-[400px] h-[400px] rounded-full"
+          style={{ background: "radial-gradient(circle, rgba(5,150,105,0.04) 0%, transparent 70%)" }} />
       </div>
 
       <ParticleField />
@@ -106,7 +106,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full border text-sm font-medium mb-7"
-              style={{ background: "var(--badge-bg)", borderColor: "rgba(124,58,237,0.25)", color: "var(--badge-color)" }}
+              style={{ background: "var(--badge-bg)", borderColor: "rgba(124,58,237,0.15)", color: "var(--badge-color)" }}
             >
               <span className="w-2 h-2 rounded-full bg-[#7c3aed] animate-pulse" />
               {hero.badge}
@@ -116,7 +116,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 28 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.65, delay: 0.1 }}
-              className="text-5xl sm:text-6xl lg:text-[5.5rem] font-black leading-[1.02] tracking-tight mb-6 text-[#0f1f3d]"
+              className="text-5xl sm:text-6xl lg:text-[5.5rem] font-black leading-[1.02] tracking-tight mb-6 text-[#111827]"
             >
               {hero.headlinePre} <TypewriterText />
               <br />
@@ -165,7 +165,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-14 pt-10 border-t border-[#7c3aed]/15"
+              className="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-14 pt-10 border-t border-gray-200"
             >
               {hero.stats.map((s, i) => (
                 <motion.div
@@ -192,17 +192,17 @@ export default function Hero() {
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 28, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-0 rounded-full border-2 border-dashed border-[#7c3aed]/25"
+                className="absolute inset-0 rounded-full border-2 border-dashed border-gray-200"
               />
               <motion.div
                 animate={{ rotate: -360 }}
                 transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-10 rounded-full border border-[#0170f4]/15"
+                className="absolute inset-10 rounded-full border border-gray-200"
               />
               {[1, 2].map((n) => (
                 <motion.div
                   key={n}
-                  className="absolute inset-0 rounded-full border border-[#7c3aed]/25"
+                  className="absolute inset-0 rounded-full border border-gray-300"
                   animate={{ scale: [1, 1.6], opacity: [0.4, 0] }}
                   transition={{ duration: 3, delay: n * 1.2, repeat: Infinity, ease: "easeOut" }}
                 />
@@ -245,7 +245,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.6 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-[#7c3aed]"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-gray-400"
       >
         <span className="text-[10px] font-semibold tracking-[0.2em] uppercase">Scroll</span>
         <motion.div animate={{ y: [0, 7, 0] }} transition={{ duration: 1.4, repeat: Infinity }}>

@@ -34,7 +34,7 @@ export default function AboutPreview() {
             transition={{ duration: 0.65 }}
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border text-sm font-medium mb-5"
-              style={{ background: "var(--badge-bg)", borderColor: "rgba(124,58,237,0.2)", color: "var(--badge-color)" }}>
+              style={{ background: "var(--badge-bg)", borderColor: "rgba(124,58,237,0.15)", color: "var(--badge-color)" }}>
               {a.badge}
             </div>
             <h2 className="text-4xl sm:text-5xl font-black mb-5 leading-tight" style={{ color: "var(--text-primary)" }}>
