@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { GitFork, Link2, Mail, ArrowUp } from "lucide-react";
 import content from "@/content.json";
+import NewsletterSignup from "@/components/NewsletterSignup";
 
 const { footer: f, site } = content;
 
@@ -84,6 +85,8 @@ export default function Footer() {
             </div>
           ))}
         </div>
+
+        <NewsletterSignup />
 
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4"
           style={{ borderTop: "1px solid rgba(143,187,249,0.08)" }}>

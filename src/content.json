@@ -7,7 +7,7 @@
   "navbar": {
     "links": [
       { "label": "Home",         "href": "#home" },
-      { "label": "Services",     "href": "#services" },
+      { "label": "Services",     "href": "/services" },
       { "label": "About",        "href": "#about" },
       { "label": "Portfolio",    "href": "#portfolio" },
       { "label": "Testimonials", "href": "#testimonials" },
@@ -37,40 +37,58 @@
     "subheading": "End‑to‑end development, from idea to live product. We stick with you through launch and beyond.",
     "items": [
       {
+        "slug": "web-development",
         "icon": "Globe",
         "title": "Web Development",
         "description": "Custom web apps and marketing sites built with React, Next.js, and a focus on performance and SEO.",
-        "tags": ["React", "Next.js", "TypeScript"]
+        "longDescription": "We build fast, accessible, and SEO-optimised web applications using the latest React and Next.js patterns. From landing pages to complex SaaS dashboards, every project is crafted with clean code, responsive design, and production-grade performance in mind.",
+        "tags": ["React", "Next.js", "TypeScript"],
+        "features": ["Server-side rendering & static generation", "SEO & Core Web Vitals optimisation", "Responsive, accessible UI", "CMS integration (Sanity, Contentful)", "Auth, payments & third-party APIs", "Ongoing maintenance & support"]
       },
       {
+        "slug": "mobile-apps",
         "icon": "Smartphone",
         "title": "Mobile Apps",
         "description": "Cross‑platform iOS & Android apps using React Native or Flutter, with smooth native feel.",
-        "tags": ["React Native", "Flutter", "iOS & Android"]
+        "longDescription": "We ship polished iOS and Android apps from a single codebase using React Native or Flutter. Our mobile apps are built for performance, offline support, and seamless app-store submission — with full QA on real devices.",
+        "tags": ["React Native", "Flutter", "iOS & Android"],
+        "features": ["Single codebase for iOS & Android", "Offline-first architecture", "Push notifications", "App Store & Play Store submission", "Deep linking & analytics", "OTA updates"]
       },
       {
+        "slug": "ui-ux-design",
         "icon": "Palette",
         "title": "UI/UX Design",
         "description": "User‑centered design from wireframes to high‑fidelity prototypes, validated with real user feedback.",
-        "tags": ["Figma", "User Research", "Design Systems"]
+        "longDescription": "Great software starts with great design. We run discovery workshops, build wireframes, and deliver pixel-perfect Figma prototypes that your developers can implement directly. Every design decision is backed by user research and accessibility standards.",
+        "tags": ["Figma", "User Research", "Design Systems"],
+        "features": ["Discovery workshops", "User journey mapping", "Wireframes & prototypes", "Design system creation", "Usability testing", "Developer handoff"]
       },
       {
+        "slug": "backend-apis",
         "icon": "Database",
         "title": "Backend & APIs",
         "description": "Reliable serverless or containerized backends with REST or GraphQL APIs that scale with your traffic.",
-        "tags": ["Node.js", "PostgreSQL", "GraphQL"]
+        "longDescription": "We architect and build backends that are secure, observable, and ready to scale. Whether you need a simple REST API or a complex event-driven microservices system, we choose the right tool for your traffic and budget.",
+        "tags": ["Node.js", "PostgreSQL", "GraphQL"],
+        "features": ["REST & GraphQL APIs", "Serverless & containerised", "Database design & migrations", "Auth (JWT, OAuth, SSO)", "Rate limiting & security", "Monitoring & alerting"]
       },
       {
+        "slug": "cloud-devops",
         "icon": "Shield",
         "title": "Cloud & DevOps",
         "description": "Automated CI/CD pipelines, AWS and GCP infrastructure, and monitoring so your app runs 24/7.",
-        "tags": ["AWS", "Docker", "CI/CD"]
+        "longDescription": "We set up the infrastructure so your team can ship confidently. From zero-downtime deployments to cost-optimised cloud architecture, we handle the ops so you can focus on product.",
+        "tags": ["AWS", "Docker", "CI/CD"],
+        "features": ["CI/CD pipeline setup", "AWS / GCP infrastructure", "Docker & Kubernetes", "Zero-downtime deployments", "Cost optimisation", "24/7 uptime monitoring"]
       },
       {
+        "slug": "performance-tuning",
         "icon": "Zap",
         "title": "Performance Tuning",
         "description": "Site audits, Core Web Vitals optimization, and caching strategies that improve load times and SEO.",
-        "tags": ["Core Web Vitals", "Lighthouse", "Caching"]
+        "longDescription": "Slow sites lose users and rankings. We audit your existing application, identify bottlenecks, and implement targeted fixes — from image optimisation and code splitting to CDN configuration and database query tuning.",
+        "tags": ["Core Web Vitals", "Lighthouse", "Caching"],
+        "features": ["Full Lighthouse audit", "Core Web Vitals fixes", "Image & asset optimisation", "Code splitting & lazy loading", "CDN & caching strategy", "Database query optimisation"]
       }
     ]
   },
@@ -242,7 +260,7 @@
   "footer": {
     "tagline": "PhileCoders builds fast, maintainable software that moves your business forward. No jargon, no surprises.",
     "socials": [
-      { "label": "GitHub",   "href": "#" },
+      { "label": "GitHub",   "href": "https://github.com/nitishv-712" },
       { "label": "LinkedIn", "href": "#" },
       { "label": "Twitter",  "href": "#" },
       { "label": "Email",    "href": "mailto:hello@PhileCoders.dev" }

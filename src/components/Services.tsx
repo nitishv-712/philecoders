@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Globe, Smartphone, Palette, Database, Shield, Zap, ArrowRight } from "lucide-react";
+import Link from "next/link";
 import content from "@/content.json";
 
 const { services: s } = content;
@@ -64,7 +65,9 @@ function ServiceCard({ item, index }: { item: typeof s.items[0]; index: number }
 
       <div className="flex items-center gap-1 text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity"
         style={{ color: "#0170f4" }}>
-        Learn more <ArrowRight size={13} className="ml-0.5" />
+        <Link href={`/services/${item.slug}`} className="flex items-center gap-1">
+          Learn more <ArrowRight size={13} className="ml-0.5" />
+        </Link>
       </div>
     </motion.div>
   );
