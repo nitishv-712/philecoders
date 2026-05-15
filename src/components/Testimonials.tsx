@@ -17,13 +17,14 @@ export default function Testimonials() {
   const item = t.items[current];
 
   return (
-    <section id="testimonials" className="py-24 sm:py-32 relative overflow-hidden bg-white dark:bg-[#071630]">
+    <section id="testimonials" className="py-24 sm:py-32 relative overflow-hidden"
+      style={{ background: "var(--bg)" }}>
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] rounded-full blur-3xl"
           style={{ background: "radial-gradient(ellipse, rgba(1,112,244,0.06) 0%, transparent 70%)" }} />
       </div>
       <div className="absolute top-0 left-0 right-0 h-px"
-        style={{ background: "linear-gradient(90deg, transparent, rgba(1,112,244,0.3), transparent)" }} />
+        style={{ background: "linear-gradient(90deg, transparent, rgba(1,112,244,0.25), transparent)" }} />
 
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
         <div ref={ref} className="text-center mb-14">
@@ -31,7 +32,7 @@ export default function Testimonials() {
             initial={{ opacity: 0, y: 18 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full border text-sm font-medium mb-4"
-            style={{ background: "rgba(1,112,244,0.08)", borderColor: "rgba(143,187,249,0.2)", color: "#8fbbf9" }}
+            style={{ background: "var(--badge-bg)", borderColor: "rgba(1,112,244,0.2)", color: "var(--badge-color)" }}
           >
             <Star size={13} className="fill-current" /> {t.badge}
           </motion.div>
@@ -39,7 +40,8 @@ export default function Testimonials() {
             initial={{ opacity: 0, y: 18 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.1 }}
-            className="text-4xl sm:text-5xl font-black text-[#10274b] dark:text-white mb-4"
+            className="text-4xl sm:text-5xl font-black mb-4"
+            style={{ color: "var(--text-primary)" }}
           >
             {t.heading} <span className="gradient-text">{t.headingAccent}</span>
           </motion.h2>
@@ -59,10 +61,10 @@ export default function Testimonials() {
               exit={{ opacity: 0, x: -50 }}
               transition={{ duration: 0.38, ease: "easeInOut" }}
               className="relative rounded-3xl p-8 sm:p-12 border overflow-hidden"
-              style={{ background: "rgba(1,112,244,0.04)", borderColor: "rgba(143,187,249,0.12)" }}
+              style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
             >
               <div className="absolute top-0 right-0 w-64 h-64 rounded-full blur-3xl pointer-events-none"
-                style={{ background: "radial-gradient(circle, rgba(1,112,244,0.08) 0%, transparent 70%)" }} />
+                style={{ background: "radial-gradient(circle, rgba(1,112,244,0.06) 0%, transparent 70%)" }} />
 
               <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-6 shadow-lg"
                 style={{ background: "linear-gradient(135deg, #10274b, #0170f4)" }}>
@@ -77,7 +79,7 @@ export default function Testimonials() {
                 ))}
               </div>
 
-              <p className="text-lg sm:text-xl leading-relaxed mb-8 italic text-[#2d4463] dark:text-[#c4cdd9]">
+              <p className="text-lg sm:text-xl leading-relaxed mb-8 italic" style={{ color: "var(--text-body)" }}>
                 &ldquo;{item.text}&rdquo;
               </p>
 
@@ -87,8 +89,8 @@ export default function Testimonials() {
                   {item.avatar}
                 </div>
                 <div>
-                  <div className="font-bold text-[#10274b] dark:text-white">{item.name}</div>
-                  <div className="text-sm" style={{ color: "#4a6080" }}>{item.role}</div>
+                  <div className="font-bold" style={{ color: "var(--text-primary)" }}>{item.name}</div>
+                  <div className="text-sm" style={{ color: "var(--text-muted)" }}>{item.role}</div>
                 </div>
               </div>
             </motion.div>
@@ -102,14 +104,14 @@ export default function Testimonials() {
                   onClick={() => setCurrent(i)}
                   whileHover={{ scale: 1.2 }}
                   className="h-2 rounded-full transition-all duration-300"
-                  style={{ width: i === current ? 32 : 8, background: i === current ? "#0170f4" : "rgba(143,187,249,0.25)" }}
+                  style={{ width: i === current ? 32 : 8, background: i === current ? "#0170f4" : "rgba(1,112,244,0.2)" }}
                 />
               ))}
             </div>
             <div className="flex gap-3">
               <motion.button onClick={prev} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}
                 className="w-10 h-10 rounded-full flex items-center justify-center border transition-colors"
-                style={{ borderColor: "rgba(143,187,249,0.2)", color: "#8496b2" }}>
+                style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}>
                 <ChevronLeft size={17} />
               </motion.button>
               <motion.button onClick={next} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}
@@ -132,15 +134,15 @@ export default function Testimonials() {
               whileHover={{ scale: 1.03 }}
               className="p-3 rounded-xl border text-left transition-all"
               style={i === current
-                ? { borderColor: "#0170f4", background: "rgba(1,112,244,0.1)" }
-                : { borderColor: "rgba(143,187,249,0.1)", background: "rgba(255,255,255,0.02)" }}
+                ? { borderColor: "#0170f4", background: "rgba(1,112,244,0.08)" }
+                : { borderColor: "var(--border)", background: "var(--bg-card)" }}
             >
               <div className="w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold mb-2"
                 style={{ background: "linear-gradient(135deg, #10274b, #0170f4)" }}>
                 {ti.avatar}
               </div>
-              <div className="text-xs font-semibold text-[#10274b] dark:text-white truncate">{ti.name}</div>
-              <div className="text-xs truncate" style={{ color: "#4a6080" }}>{ti.role.split(",")[0]}</div>
+              <div className="text-xs font-semibold truncate" style={{ color: "var(--text-primary)" }}>{ti.name}</div>
+              <div className="text-xs truncate" style={{ color: "var(--text-muted)" }}>{ti.role.split(",")[0]}</div>
             </motion.button>
           ))}
         </div>

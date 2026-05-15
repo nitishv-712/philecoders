@@ -21,18 +21,49 @@
 
   --brand-gradient: linear-gradient(90deg, #10274b 0%, #0157c2 50%, #0170f4 75%, #8fbbf9 100%);
 
-  --background: #ffffff;
-  --foreground: #10274b;
+  /* Light theme */
+  --bg:           #f8faff;
+  --bg-alt:       #eef4fe;
+  --bg-card:      #ffffff;
+  --bg-section:   #f0f6ff;
+  --border:       rgba(1,112,244,0.15);
+  --border-soft:  rgba(1,112,244,0.08);
+  --text-primary: #0f1f3d;
+  --text-body:    #2d4463;
+  --text-muted:   #4a6080;
+  --text-faint:   #8496b2;
+  --badge-bg:     rgba(1,112,244,0.08);
+  --badge-color:  #0157c2;
+  --tag-bg:       rgba(1,112,244,0.08);
+  --tag-color:    #0157c2;
+  --input-bg:     #ffffff;
+  --input-border: rgba(1,112,244,0.2);
+  --card-hover:   rgba(1,112,244,0.04);
 }
 
 .dark {
-  --background: #071630;
-  --foreground: #e9ecf2;
+  --bg:           #071630;
+  --bg-alt:       #10274b;
+  --bg-card:      rgba(255,255,255,0.03);
+  --bg-section:   #10274b;
+  --border:       rgba(143,187,249,0.12);
+  --border-soft:  rgba(143,187,249,0.08);
+  --text-primary: #e9ecf2;
+  --text-body:    #c4cdd9;
+  --text-muted:   #8496b2;
+  --text-faint:   #4a6080;
+  --badge-bg:     rgba(1,112,244,0.12);
+  --badge-color:  #8fbbf9;
+  --tag-bg:       rgba(1,112,244,0.12);
+  --tag-color:    #8fbbf9;
+  --input-bg:     rgba(255,255,255,0.05);
+  --input-border: rgba(143,187,249,0.15);
+  --card-hover:   rgba(1,87,194,0.07);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-background: var(--bg);
+  --color-foreground: var(--text-primary);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -42,8 +73,8 @@
 html { scroll-behavior: smooth; }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--bg);
+  color: var(--text-primary);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
   overflow-x: hidden;
 }
@@ -77,11 +108,8 @@ body {
 
 /* ── Dot grid ── */
 .dot-grid {
-  background-image: radial-gradient(circle, rgba(1,112,244,0.12) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(1,112,244,0.18) 1px, transparent 1px);
   background-size: 36px 36px;
-}
-.dark .dot-grid {
-  background-image: radial-gradient(circle, rgba(143,187,249,0.08) 1px, transparent 1px);
 }
 
 /* ── Shimmer ── */
@@ -108,7 +136,7 @@ body {
   100% { transform: scale(2.2); opacity: 0; }
 }
 
-/* ── Particle float (CSS-only, replaces per-particle motion values) ── */
+/* ── Particle float ── */
 @keyframes particleFloat {
   0%, 100% { transform: translateY(0);    opacity: 0; }
   20%       { opacity: 0.6; }
@@ -127,7 +155,7 @@ body {
 .card-hover { transition: all 0.3s ease; }
 .card-hover:hover {
   transform: translateY(-5px);
-  box-shadow: 0 24px 64px rgba(1,112,244,0.18);
+  box-shadow: 0 24px 64px rgba(1,112,244,0.14);
 }
 
 /* ── Horizontal marquee ── */
@@ -139,18 +167,9 @@ body {
 
 /* ── 3D & Cursor ── */
 @media (pointer: fine) {
-  body {
-    cursor: none;
-  }
-  a, button, input, textarea, select {
-    cursor: none !important;
-  }
+  body { cursor: none; }
+  a, button, input, textarea, select { cursor: none !important; }
 }
 
-.perspective-1000 {
-  perspective: 1000px;
-}
-
-.transform-style-3d {
-  transform-style: preserve-3d;
-}
+.perspective-1000 { perspective: 1000px; }
+.transform-style-3d { transform-style: preserve-3d; }

@@ -43,13 +43,13 @@ export default async function ServiceDetailPage({ params }: Props) {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen" style={{ background: "linear-gradient(160deg, #071630 0%, #10274b 60%, #071630 100%)" }}>
+      <main className="min-h-screen" style={{ background: "var(--bg)" }}>
 
         {/* Hero */}
         <section className="pt-32 pb-16 px-5 sm:px-8 max-w-5xl mx-auto">
           <Link href="/services"
-            className="inline-flex items-center gap-2 text-sm mb-8 transition-colors hover:text-white"
-            style={{ color: "#4a6080" }}>
+            className="inline-flex items-center gap-2 text-sm mb-8 transition-colors hover:text-[#0170f4]"
+            style={{ color: "var(--text-muted)" }}>
             <ArrowLeft size={15} /> All Services
           </Link>
 
@@ -62,13 +62,13 @@ export default async function ServiceDetailPage({ params }: Props) {
               <div className="flex flex-wrap gap-2 mb-3">
                 {service.tags.map((tag) => (
                   <span key={tag} className="px-2.5 py-1 text-xs font-medium rounded-full"
-                    style={{ background: "rgba(1,112,244,0.12)", color: "#8fbbf9" }}>
+                    style={{ background: "var(--tag-bg)", color: "var(--tag-color)" }}>
                     {tag}
                   </span>
                 ))}
               </div>
-              <h1 className="text-4xl sm:text-5xl font-black text-white mb-3">{service.title}</h1>
-              <p className="text-lg max-w-2xl" style={{ color: "#8496b2" }}>{service.longDescription}</p>
+              <h1 className="text-4xl sm:text-5xl font-black mb-3" style={{ color: "var(--text-primary)" }}>{service.title}</h1>
+              <p className="text-lg max-w-2xl" style={{ color: "var(--text-muted)" }}>{service.longDescription}</p>
             </div>
           </div>
         </section>
@@ -82,11 +82,11 @@ export default async function ServiceDetailPage({ params }: Props) {
 
               {/* Features */}
               <div className="rounded-2xl border p-6"
-                style={{ background: "rgba(255,255,255,0.03)", borderColor: "rgba(143,187,249,0.12)" }}>
-                <h2 className="text-lg font-bold text-white mb-5">What&apos;s included</h2>
+                style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+                <h2 className="text-lg font-bold mb-5" style={{ color: "var(--text-primary)" }}>What&apos;s included</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {service.features.map((f) => (
-                    <div key={f} className="flex items-start gap-2.5 text-sm" style={{ color: "#c4cdd9" }}>
+                    <div key={f} className="flex items-start gap-2.5 text-sm" style={{ color: "var(--text-body)" }}>
                       <CheckCircle2 size={15} style={{ color: "#0170f4", flexShrink: 0, marginTop: 2 }} />
                       {f}
                     </div>
@@ -96,13 +96,13 @@ export default async function ServiceDetailPage({ params }: Props) {
 
               {/* Reviews */}
               <div>
-                <h2 className="text-lg font-bold text-white mb-5">Client Reviews</h2>
+                <h2 className="text-lg font-bold mb-5" style={{ color: "var(--text-primary)" }}>Client Reviews</h2>
                 <ReviewList serviceSlug={service.slug} />
               </div>
 
               {/* Review form */}
               <div>
-                <h2 className="text-lg font-bold text-white mb-5">Share Your Experience</h2>
+                <h2 className="text-lg font-bold mb-5" style={{ color: "var(--text-primary)" }}>Share Your Experience</h2>
                 <ReviewForm serviceSlug={service.slug} />
               </div>
             </div>

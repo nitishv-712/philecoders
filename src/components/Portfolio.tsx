@@ -20,7 +20,7 @@ function ProjectCard({ project, index }: { project: typeof p.projects[0]; index:
       exit={{ opacity: 0, scale: 0.92 }}
       transition={{ duration: 0.38, delay: index * 0.07 }}
       className="group relative rounded-2xl overflow-hidden border card-hover"
-      style={{ background: "rgba(255,255,255,0.02)", borderColor: "rgba(143,187,249,0.1)" }}
+      style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
     >
       <div className="h-36 relative overflow-hidden flex items-center justify-center"
         style={{ background: "linear-gradient(135deg, #10274b 0%, #0157c2 60%, #0170f4 100%)" }}>
@@ -35,12 +35,12 @@ function ProjectCard({ project, index }: { project: typeof p.projects[0]; index:
       </div>
 
       <div className="p-5">
-        <h3 className="text-sm font-bold text-white mb-2">{project.title}</h3>
-        <p className="text-xs leading-relaxed mb-4" style={{ color: "#8496b2" }}>{project.description}</p>
+        <h3 className="text-sm font-bold mb-2" style={{ color: "var(--text-primary)" }}>{project.title}</h3>
+        <p className="text-xs leading-relaxed mb-4" style={{ color: "var(--text-muted)" }}>{project.description}</p>
         <div className="flex flex-wrap gap-1.5 mb-4">
           {project.tags.map((tag) => (
             <span key={tag} className="px-2 py-0.5 text-xs rounded-full"
-              style={{ background: "rgba(1,112,244,0.12)", color: "#8fbbf9" }}>
+              style={{ background: "var(--tag-bg)", color: "var(--tag-color)" }}>
               {tag}
             </span>
           ))}
@@ -52,7 +52,7 @@ function ProjectCard({ project, index }: { project: typeof p.projects[0]; index:
             <ExternalLink size={12} /> Live Demo
           </motion.a>
           <motion.a href={project.sourceUrl} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
-            className="flex items-center gap-1.5 text-xs font-semibold" style={{ color: "#8496b2" }}
+            className="flex items-center gap-1.5 text-xs font-semibold" style={{ color: "var(--text-muted)" }}
             target="_blank" rel="noopener noreferrer">
             <GitFork size={12} /> Source
           </motion.a>
@@ -71,9 +71,9 @@ export default function Portfolio() {
 
   return (
     <section id="portfolio" className="py-24 sm:py-32 relative overflow-hidden"
-      style={{ background: "linear-gradient(180deg, #10274b 0%, #071630 100%)" }}>
+      style={{ background: "var(--bg-alt)" }}>
       <div className="absolute top-0 left-0 right-0 h-px"
-        style={{ background: "linear-gradient(90deg, transparent, rgba(143,187,249,0.25), transparent)" }} />
+        style={{ background: "linear-gradient(90deg, transparent, rgba(1,112,244,0.25), transparent)" }} />
 
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
         <div ref={ref} className="text-center mb-12">
@@ -81,7 +81,7 @@ export default function Portfolio() {
             initial={{ opacity: 0, y: 18 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full border text-sm font-medium mb-4"
-            style={{ background: "rgba(1,112,244,0.1)", borderColor: "rgba(143,187,249,0.2)", color: "#8fbbf9" }}
+            style={{ background: "var(--badge-bg)", borderColor: "rgba(1,112,244,0.2)", color: "var(--badge-color)" }}
           >
             <Layers size={13} /> {p.badge}
           </motion.div>
@@ -89,7 +89,8 @@ export default function Portfolio() {
             initial={{ opacity: 0, y: 18 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.1 }}
-            className="text-4xl sm:text-5xl font-black text-white mb-4"
+            className="text-4xl sm:text-5xl font-black mb-4"
+            style={{ color: "var(--text-primary)" }}
           >
             {p.heading} <span className="gradient-text">{p.headingAccent}</span>
           </motion.h2>
@@ -98,7 +99,7 @@ export default function Portfolio() {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.2 }}
             className="text-lg max-w-2xl mx-auto"
-            style={{ color: "#8496b2" }}
+            style={{ color: "var(--text-muted)" }}
           >
             {p.subheading}
           </motion.p>
@@ -117,7 +118,9 @@ export default function Portfolio() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="relative px-5 py-2 text-sm font-semibold rounded-full transition-all"
-              style={active === cat ? { color: "#fff" } : { color: "#8496b2", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(143,187,249,0.15)" }}
+              style={active === cat
+                ? { color: "#fff" }
+                : { color: "var(--text-muted)", background: "var(--bg-card)", border: "1px solid var(--border)" }}
             >
               {active === cat && (
                 <motion.span

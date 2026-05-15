@@ -24,7 +24,6 @@ export default function Contact() {
       await submitContact(form);
       setSubmitted(true);
     } catch {
-      // silently fail — form still shows success to user
       setSubmitted(true);
     } finally {
       setLoading(false);
@@ -33,11 +32,11 @@ export default function Contact() {
 
   return (
     <section id="contact" className="py-24 sm:py-32 relative overflow-hidden"
-      style={{ background: "linear-gradient(180deg, #071630 0%, #10274b 100%)" }}>
+      style={{ background: "var(--bg-section)" }}>
       <div className="absolute top-0 left-0 right-0 h-px"
-        style={{ background: "linear-gradient(90deg, transparent, rgba(1,112,244,0.4), transparent)" }} />
+        style={{ background: "linear-gradient(90deg, transparent, rgba(1,112,244,0.3), transparent)" }} />
       <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full blur-3xl pointer-events-none"
-        style={{ background: "radial-gradient(circle, rgba(1,112,244,0.07) 0%, transparent 70%)" }} />
+        style={{ background: "radial-gradient(circle, rgba(1,112,244,0.06) 0%, transparent 70%)" }} />
 
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
         <div ref={ref} className="text-center mb-14">
@@ -45,7 +44,7 @@ export default function Contact() {
             initial={{ opacity: 0, y: 18 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full border text-sm font-medium mb-4"
-            style={{ background: "rgba(1,112,244,0.1)", borderColor: "rgba(143,187,249,0.2)", color: "#8fbbf9" }}
+            style={{ background: "var(--badge-bg)", borderColor: "rgba(1,112,244,0.2)", color: "var(--badge-color)" }}
           >
             <MessageSquare size={13} /> {c.badge}
           </motion.div>
@@ -53,7 +52,8 @@ export default function Contact() {
             initial={{ opacity: 0, y: 18 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.1 }}
-            className="text-4xl sm:text-5xl font-black text-white mb-4"
+            className="text-4xl sm:text-5xl font-black mb-4"
+            style={{ color: "var(--text-primary)" }}
           >
             {c.heading} <span className="gradient-text">{c.headingAccent}</span>
           </motion.h2>
@@ -62,7 +62,7 @@ export default function Contact() {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.2 }}
             className="text-lg max-w-2xl mx-auto"
-            style={{ color: "#8496b2" }}
+            style={{ color: "var(--text-muted)" }}
           >
             {c.subheading}
           </motion.p>
@@ -84,15 +84,15 @@ export default function Contact() {
                   animate={inView ? { opacity: 1, x: 0 } : {}}
                   transition={{ delay: 0.3 + i * 0.1 }}
                   className="flex items-center gap-4 p-5 rounded-2xl border"
-                  style={{ background: "rgba(255,255,255,0.03)", borderColor: "rgba(143,187,249,0.1)" }}
+                  style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
                 >
                   <div className="w-11 h-11 rounded-xl flex items-center justify-center"
-                    style={{ background: "rgba(1,112,244,0.15)", color: "#0170f4" }}>
+                    style={{ background: "rgba(1,112,244,0.1)", color: "#0170f4" }}>
                     <Icon size={19} />
                   </div>
                   <div>
-                    <div className="text-xs font-semibold uppercase tracking-wide" style={{ color: "#4a6080" }}>{item.label}</div>
-                    <div className="text-sm font-semibold text-white mt-0.5">{item.value}</div>
+                    <div className="text-xs font-semibold uppercase tracking-wide" style={{ color: "var(--text-muted)" }}>{item.label}</div>
+                    <div className="text-sm font-semibold mt-0.5" style={{ color: "var(--text-primary)" }}>{item.value}</div>
                   </div>
                 </motion.div>
               );
@@ -103,7 +103,7 @@ export default function Contact() {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.6 }}
               className="mt-1 p-6 rounded-2xl text-white shadow-xl"
-              style={{ background: "linear-gradient(135deg, #0157c2 0%, #0170f4 100%)", boxShadow: "0 20px 48px rgba(1,112,244,0.3)" }}
+              style={{ background: "linear-gradient(135deg, #0157c2 0%, #0170f4 100%)", boxShadow: "0 20px 48px rgba(1,112,244,0.25)" }}
             >
               <div className="text-2xl mb-3">{c.cta.emoji}</div>
               <h3 className="font-bold text-lg mb-2">{c.cta.heading}</h3>
@@ -118,7 +118,7 @@ export default function Contact() {
             className="lg:col-span-3"
           >
             <div className="rounded-3xl border p-8"
-              style={{ background: "rgba(255,255,255,0.03)", borderColor: "rgba(143,187,249,0.1)" }}>
+              style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
               {submitted ? (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.85 }}
@@ -129,12 +129,12 @@ export default function Contact() {
                     animate={{ scale: [1, 1.2, 1] }}
                     transition={{ duration: 0.5 }}
                     className="w-16 h-16 rounded-full flex items-center justify-center mb-4"
-                    style={{ background: "rgba(1,112,244,0.15)" }}
+                    style={{ background: "rgba(1,112,244,0.1)" }}
                   >
                     <CheckCircle2 size={30} style={{ color: "#0170f4" }} />
                   </motion.div>
-                  <h3 className="text-xl font-bold text-white mb-2">{c.form.successTitle}</h3>
-                  <p className="text-sm" style={{ color: "#8496b2" }}>{c.form.successText}</p>
+                  <h3 className="text-xl font-bold mb-2" style={{ color: "var(--text-primary)" }}>{c.form.successTitle}</h3>
+                  <p className="text-sm" style={{ color: "var(--text-muted)" }}>{c.form.successText}</p>
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
@@ -144,53 +144,65 @@ export default function Contact() {
                       { id: "email", label: "Email Address", placeholder: c.form.emailPlaceholder, type: "email" },
                     ].map((field) => (
                       <div key={field.id}>
-                        <label className="block text-sm font-semibold mb-2" style={{ color: "#8fbbf9" }}>{field.label}</label>
+                        <label className="block text-sm font-semibold mb-2" style={{ color: "var(--text-body)" }}>{field.label}</label>
                         <input
                           type={field.type}
                           placeholder={field.placeholder}
                           required
                           value={form[field.id as keyof typeof form]}
                           onChange={(e) => setForm({ ...form, [field.id]: e.target.value })}
-                          className="w-full px-4 py-3 rounded-xl text-sm text-white placeholder-[#4a6080] outline-none transition-all"
-                          style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(143,187,249,0.15)" }}
+                          className="w-full px-4 py-3 rounded-xl text-sm outline-none transition-all"
+                          style={{
+                            background: "var(--input-bg)",
+                            border: "1px solid var(--input-border)",
+                            color: "var(--text-primary)",
+                          }}
                           onFocus={(e) => (e.target.style.borderColor = "#0170f4")}
-                          onBlur={(e)  => (e.target.style.borderColor = "rgba(143,187,249,0.15)")}
+                          onBlur={(e)  => (e.target.style.borderColor = "var(--input-border)")}
                         />
                       </div>
                     ))}
                   </div>
                   <div>
-                    <label className="block text-sm font-semibold mb-2" style={{ color: "#8fbbf9" }}>Subject</label>
+                    <label className="block text-sm font-semibold mb-2" style={{ color: "var(--text-body)" }}>Subject</label>
                     <input
                       type="text"
                       placeholder={c.form.subjectPlaceholder}
                       required
                       value={form.subject}
                       onChange={(e) => setForm({ ...form, subject: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl text-sm text-white placeholder-[#4a6080] outline-none transition-all"
-                      style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(143,187,249,0.15)" }}
+                      className="w-full px-4 py-3 rounded-xl text-sm outline-none transition-all"
+                      style={{
+                        background: "var(--input-bg)",
+                        border: "1px solid var(--input-border)",
+                        color: "var(--text-primary)",
+                      }}
                       onFocus={(e) => (e.target.style.borderColor = "#0170f4")}
-                      onBlur={(e)  => (e.target.style.borderColor = "rgba(143,187,249,0.15)")}
+                      onBlur={(e)  => (e.target.style.borderColor = "var(--input-border)")}
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-semibold mb-2" style={{ color: "#8fbbf9" }}>Message</label>
+                    <label className="block text-sm font-semibold mb-2" style={{ color: "var(--text-body)" }}>Message</label>
                     <textarea
                       rows={5}
                       placeholder={c.form.messagePlaceholder}
                       required
                       value={form.message}
                       onChange={(e) => setForm({ ...form, message: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl text-sm text-white placeholder-[#4a6080] outline-none transition-all resize-none"
-                      style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(143,187,249,0.15)" }}
+                      className="w-full px-4 py-3 rounded-xl text-sm outline-none transition-all resize-none"
+                      style={{
+                        background: "var(--input-bg)",
+                        border: "1px solid var(--input-border)",
+                        color: "var(--text-primary)",
+                      }}
                       onFocus={(e) => (e.target.style.borderColor = "#0170f4")}
-                      onBlur={(e)  => (e.target.style.borderColor = "rgba(143,187,249,0.15)")}
+                      onBlur={(e)  => (e.target.style.borderColor = "var(--input-border)")}
                     />
                   </div>
                   <motion.button
                     type="submit"
                     disabled={loading}
-                    whileHover={{ scale: 1.02, boxShadow: "0 20px 40px rgba(1,112,244,0.35)" }}
+                    whileHover={{ scale: 1.02, boxShadow: "0 20px 40px rgba(1,112,244,0.3)" }}
                     whileTap={{ scale: 0.98 }}
                     className="w-full flex items-center justify-center gap-2 py-4 rounded-xl text-white font-semibold text-sm shadow-lg disabled:opacity-70 transition-all"
                     style={{ background: "linear-gradient(90deg, #0157c2 0%, #0170f4 100%)" }}

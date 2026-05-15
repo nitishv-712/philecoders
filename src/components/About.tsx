@@ -14,11 +14,12 @@ export default function About() {
   const inView = useInView(ref, { once: true, margin: "-90px" });
 
   return (
-    <section id="about" className="py-24 sm:py-32 relative overflow-hidden bg-white dark:bg-[#071630]">
+    <section id="about" className="py-24 sm:py-32 relative overflow-hidden"
+      style={{ background: "var(--bg)" }}>
       <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full blur-3xl pointer-events-none"
         style={{ background: "radial-gradient(circle, rgba(1,112,244,0.06) 0%, transparent 70%)" }} />
       <div className="absolute top-0 right-0 w-80 h-80 rounded-full blur-3xl pointer-events-none"
-        style={{ background: "radial-gradient(circle, rgba(143,187,249,0.05) 0%, transparent 70%)" }} />
+        style={{ background: "radial-gradient(circle, rgba(1,87,194,0.04) 0%, transparent 70%)" }} />
 
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
         <div ref={ref} className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -32,7 +33,7 @@ export default function About() {
           >
             <div className="relative rounded-3xl p-[2px] shadow-2xl"
               style={{ background: "linear-gradient(135deg, #0170f4, #8fbbf9, #10274b)" }}>
-              <div className="rounded-3xl p-8" style={{ background: "#071630" }}>
+              <div className="rounded-3xl p-8 bg-[#071630]">
                 {/* Code block */}
                 <div className="rounded-xl p-5 font-mono text-xs mb-6 border"
                   style={{ background: "#030d1e", borderColor: "rgba(1,112,244,0.2)" }}>
@@ -66,7 +67,7 @@ export default function About() {
                       >
                         <Icon size={18} className="mx-auto mb-2" style={{ color: "#0170f4" }} />
                         <div className="text-xl font-black gradient-text">{m.value}</div>
-                        <div className="text-xs mt-0.5" style={{ color: "#4a6080" }}>{m.label}</div>
+                        <div className="text-xs mt-0.5 text-white/50">{m.label}</div>
                       </motion.div>
                     );
                   })}
@@ -77,26 +78,24 @@ export default function About() {
             <motion.div
               animate={{ y: [0, -8, 0] }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-4 -right-4 rounded-2xl shadow-xl px-4 py-3 flex items-center gap-2"
-              style={{ background: "#10274b", border: "1px solid rgba(143,187,249,0.15)" }}
+              className="absolute -top-4 -right-4 rounded-2xl shadow-xl px-4 py-3 flex items-center gap-2 bg-[#10274b] border border-[#8fbbf9]/15"
             >
               <span className="text-xl">🏆</span>
               <div>
                 <div className="text-xs font-bold text-white">{a.badges.topRated.label}</div>
-                <div className="text-xs" style={{ color: "#4a6080" }}>{a.badges.topRated.sub}</div>
+                <div className="text-xs text-[#4a6080]">{a.badges.topRated.sub}</div>
               </div>
             </motion.div>
 
             <motion.div
               animate={{ y: [0, 8, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              className="absolute -bottom-4 -left-4 rounded-2xl shadow-xl px-4 py-3 flex items-center gap-2"
-              style={{ background: "#10274b", border: "1px solid rgba(143,187,249,0.15)" }}
+              className="absolute -bottom-4 -left-4 rounded-2xl shadow-xl px-4 py-3 flex items-center gap-2 bg-[#10274b] border border-[#8fbbf9]/15"
             >
               <span className="text-xl">⚡</span>
               <div>
                 <div className="text-xs font-bold text-white">{a.badges.fastDelivery.label}</div>
-                <div className="text-xs" style={{ color: "#4a6080" }}>{a.badges.fastDelivery.sub}</div>
+                <div className="text-xs text-[#4a6080]">{a.badges.fastDelivery.sub}</div>
               </div>
             </motion.div>
           </motion.div>
@@ -108,16 +107,16 @@ export default function About() {
             transition={{ duration: 0.7, delay: 0.1 }}
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border text-sm font-medium mb-5"
-              style={{ background: "rgba(1,112,244,0.08)", borderColor: "rgba(143,187,249,0.2)", color: "#8fbbf9" }}>
+              style={{ background: "var(--badge-bg)", borderColor: "rgba(1,112,244,0.2)", color: "var(--badge-color)" }}>
               <Users size={13} /> {a.badge}
             </div>
 
-            <h2 className="text-4xl sm:text-5xl font-black mb-6 leading-tight text-[#10274b] dark:text-white">
+            <h2 className="text-4xl sm:text-5xl font-black mb-6 leading-tight" style={{ color: "var(--text-primary)" }}>
               {a.heading} <span className="gradient-text">{a.headingAccent}</span>
             </h2>
 
-            <p className="leading-relaxed mb-5 text-[#4a6080] dark:text-[#8496b2]">{a.description1}</p>
-            <p className="leading-relaxed mb-8 text-[#4a6080] dark:text-[#8496b2]">{a.description2}</p>
+            <p className="leading-relaxed mb-5" style={{ color: "var(--text-body)" }}>{a.description1}</p>
+            <p className="leading-relaxed mb-8" style={{ color: "var(--text-body)" }}>{a.description2}</p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
               {a.highlights.map((item, i) => (
@@ -126,7 +125,8 @@ export default function About() {
                   initial={{ opacity: 0, x: 16 }}
                   animate={inView ? { opacity: 1, x: 0 } : {}}
                   transition={{ delay: 0.3 + i * 0.07 }}
-                  className="flex items-center gap-2.5 text-sm text-[#2d4463] dark:text-[#c4cdd9]"
+                  className="flex items-center gap-2.5 text-sm"
+                  style={{ color: "var(--text-body)" }}
                 >
                   <CheckCircle2 size={15} style={{ color: "#0170f4", flexShrink: 0 }} />
                   {item}
@@ -134,7 +134,7 @@ export default function About() {
               ))}
             </div>
 
-            <p className="text-xs font-semibold uppercase tracking-widest mb-3" style={{ color: "#4a6080" }}>
+            <p className="text-xs font-semibold uppercase tracking-widest mb-3" style={{ color: "var(--text-muted)" }}>
               Tech Stack
             </p>
             <div className="flex flex-wrap gap-2">
@@ -146,7 +146,7 @@ export default function About() {
                   transition={{ delay: 0.5 + i * 0.04 }}
                   whileHover={{ scale: 1.08 }}
                   className="px-3 py-1.5 text-xs font-semibold rounded-full cursor-default"
-                  style={{ background: "rgba(1,112,244,0.1)", color: "#8fbbf9", border: "1px solid rgba(143,187,249,0.15)" }}
+                  style={{ background: "var(--tag-bg)", color: "var(--tag-color)", border: "1px solid rgba(1,112,244,0.15)" }}
                 >
                   {tech}
                 </motion.span>
