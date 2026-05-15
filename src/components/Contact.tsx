@@ -6,7 +6,8 @@ import { Mail, Phone, MapPin, Send, MessageSquare, CheckCircle2 } from "lucide-r
 import content from "@/content.json";
 import { submitContact } from "@/lib/firestore";
 
-const { contact: c } = content;
+const { contact } = content;
+const c = { ...contact, badge: contact.hero.badge, heading: contact.hero.heading, headingAccent: contact.hero.headingAccent, subheading: contact.hero.subheading };
 
 const iconMap: Record<string, React.ElementType> = { Mail, Phone, MapPin };
 

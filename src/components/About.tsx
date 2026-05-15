@@ -5,7 +5,8 @@ import { motion, useInView } from "framer-motion";
 import { CheckCircle2, Users, Award, Coffee } from "lucide-react";
 import content from "@/content.json";
 
-const { about: a, site } = content;
+const { about, site } = content;
+const a = { ...about, milestones: about.intro.stats, highlights: about.highlights, techStack: about.techStack, badges: about.badges, codeSnippet: about.codeSnippet, heading: about.intro.heading, headingAccent: about.intro.headingAccent, description1: about.intro.description, description2: "We act as your technical co‑founders — no fluff, no unnecessary complexity, just software that works.", badge: about.intro.badge };
 
 const milestoneIcons = [Users, Award, Coffee];
 

@@ -3,16 +3,17 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Sun, Moon } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import content from "@/content.json";
 
 const { navbar, site } = content;
-const navLinks = navbar.links;
 
 export default function Navbar() {
-  const [isDark, setIsDark] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  const [active, setActive] = useState("Home");
+  const [isDark,    setIsDark]    = useState(false);
+  const [isOpen,    setIsOpen]    = useState(false);
+  const [scrolled,  setScrolled]  = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const stored = localStorage.getItem("theme");
@@ -35,54 +36,59 @@ export default function Navbar() {
     localStorage.setItem("theme", next ? "dark" : "light");
   };
 
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href);
+
   return (
     <motion.nav
       initial={{ y: -72, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.55, ease: "easeOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
           ? "bg-white/90 dark:bg-[#071630]/90 backdrop-blur-2xl border-b border-[#c4dcfc]/40 dark:border-[#1f3557]/60 shadow-lg shadow-[#0170f4]/5"
           : "bg-transparent"
-        }`}
+      }`}
     >
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
         <div className="flex items-center justify-between h-16">
 
           {/* Logo */}
-          <motion.a href="#home" className="flex items-center gap-2.5" whileHover={{ scale: 1.02 }}>
-            <div className="w-8 h-8 rounded-lg flex items-center justify-center shadow-md"
-              style={{ background: "linear-gradient(135deg, #10274b 0%, #0170f4 100%)" }}>
-              <span className="text-xs font-black text-white tracking-tight">{site.logo}</span>
-            </div>
-            <span className="font-bold text-[17px] tracking-tight">
-              <span className="gradient-text">{site.name.slice(0, 5)}</span>
-              <span className="text-[#10274b] dark:text-white">{site.name.slice(5)}</span>
-            </span>
-          </motion.a>
+          <motion.div whileHover={{ scale: 1.02 }}>
+            <Link href="/" className="flex items-center gap-2.5">
+              <div className="w-8 h-8 rounded-lg flex items-center justify-center shadow-md"
+                style={{ background: "linear-gradient(135deg, #10274b 0%, #0170f4 100%)" }}>
+                <span className="text-xs font-black text-white tracking-tight">{site.logo}</span>
+              </div>
+              <span className="font-bold text-[17px] tracking-tight">
+                <span className="gradient-text">{site.name.slice(0, 5)}</span>
+                <span style={{ color: "var(--text-primary)" }}>{site.name.slice(5)}</span>
+              </span>
+            </Link>
+          </motion.div>
 
           {/* Desktop links */}
           <div className="hidden md:flex items-center gap-0.5">
-            {navLinks.map((link) => (
-              <motion.a
-                key={link.label}
-                href={link.href}
-                onClick={() => setActive(link.label)}
-                whileHover={{ scale: 1.04 }}
-                whileTap={{ scale: 0.96 }}
-                className={`relative px-4 py-2 text-sm font-medium rounded-full transition-colors ${active === link.label
-                    ? "text-[#0170f4] dark:text-[#8fbbf9]"
-                    : "text-[#4a6080] dark:text-[#8496b2] hover:text-[#10274b] dark:hover:text-white"
+            {navbar.links.map((link) => (
+              <motion.div key={link.label} whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }}>
+                <Link
+                  href={link.href}
+                  className={`relative px-4 py-2 text-sm font-medium rounded-full transition-colors block ${
+                    isActive(link.href)
+                      ? "text-[#0170f4] dark:text-[#8fbbf9]"
+                      : "text-[#4a6080] dark:text-[#8496b2] hover:text-[#10274b] dark:hover:text-white"
                   }`}
-              >
-                {active === link.label && (
-                  <motion.span
-                    layoutId="nav-pill"
-                    className="absolute inset-0 rounded-full bg-[#e8f2fe] dark:bg-[#0157c2]/20"
-                    transition={{ type: "spring", stiffness: 420, damping: 32 }}
-                  />
-                )}
-                <span className="relative">{link.label}</span>
-              </motion.a>
+                >
+                  {isActive(link.href) && (
+                    <motion.span
+                      layoutId="nav-pill"
+                      className="absolute inset-0 rounded-full bg-[#e8f2fe] dark:bg-[#0157c2]/20"
+                      transition={{ type: "spring", stiffness: 420, damping: 32 }}
+                    />
+                  )}
+                  <span className="relative">{link.label}</span>
+                </Link>
+              </motion.div>
             ))}
           </div>
 
@@ -108,15 +114,19 @@ export default function Navbar() {
               </AnimatePresence>
             </motion.button>
 
-            <motion.a
-              href="#contact"
+            <motion.div
               whileHover={{ scale: 1.05, boxShadow: "0 8px 28px rgba(1,112,244,0.35)" }}
               whileTap={{ scale: 0.96 }}
-              className="hidden md:flex items-center px-5 py-2 text-sm font-semibold text-white rounded-full shadow-lg shadow-[#0170f4]/25 transition-all"
-              style={{ background: "linear-gradient(90deg, #10274b 0%, #0170f4 100%)" }}
+              className="hidden md:block"
             >
-              {navbar.cta}
-            </motion.a>
+              <Link
+                href="/contact"
+                className="flex items-center px-5 py-2 text-sm font-semibold text-white rounded-full shadow-lg shadow-[#0170f4]/25 transition-all"
+                style={{ background: "linear-gradient(90deg, #10274b 0%, #0170f4 100%)" }}
+              >
+                {navbar.cta}
+              </Link>
+            </motion.div>
 
             <motion.button
               onClick={() => setIsOpen(!isOpen)}
@@ -145,30 +155,36 @@ export default function Navbar() {
             className="md:hidden overflow-hidden bg-white/96 dark:bg-[#071630]/96 backdrop-blur-2xl border-b border-[#c4dcfc]/40 dark:border-[#1f3557]/60"
           >
             <div className="px-5 py-4 flex flex-col gap-1">
-              {navLinks.map((link, i) => (
-                <motion.a
+              {navbar.links.map((link, i) => (
+                <motion.div
                   key={link.label}
-                  href={link.href}
-                  onClick={() => { setActive(link.label); setIsOpen(false); }}
                   initial={{ opacity: 0, x: -16 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.045 }}
-                  className="px-4 py-3 text-sm font-medium text-[#2d4463] dark:text-[#c4cdd9] hover:text-[#0170f4] dark:hover:text-[#8fbbf9] hover:bg-[#e8f2fe] dark:hover:bg-[#0157c2]/15 rounded-xl transition-colors"
                 >
-                  {link.label}
-                </motion.a>
+                  <Link
+                    href={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className="block px-4 py-3 text-sm font-medium text-[#2d4463] dark:text-[#c4cdd9] hover:text-[#0170f4] dark:hover:text-[#8fbbf9] hover:bg-[#e8f2fe] dark:hover:bg-[#0157c2]/15 rounded-xl transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </motion.div>
               ))}
-              <motion.a
-                href="#contact"
+              <motion.div
                 initial={{ opacity: 0, x: -16 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: navLinks.length * 0.045 }}
-                onClick={() => setIsOpen(false)}
-                className="mt-2 px-4 py-3 text-sm font-semibold text-white text-center rounded-xl"
-                style={{ background: "linear-gradient(90deg, #10274b 0%, #0170f4 100%)" }}
+                transition={{ delay: navbar.links.length * 0.045 }}
               >
-                {navbar.cta}
-              </motion.a>
+                <Link
+                  href="/contact"
+                  onClick={() => setIsOpen(false)}
+                  className="mt-2 block px-4 py-3 text-sm font-semibold text-white text-center rounded-xl"
+                  style={{ background: "linear-gradient(90deg, #10274b 0%, #0170f4 100%)" }}
+                >
+                  {navbar.cta}
+                </Link>
+              </motion.div>
             </div>
           </motion.div>
         )}
