@@ -77,6 +77,21 @@
   },
   "services": {
     "badge": "What We Do",
+    "process": [
+      { "step": "01", "title": "Discovery",       "desc": "Free 30-min call to understand your goals, constraints, and timeline. No commitment required." },
+      { "step": "02", "title": "Proposal",        "desc": "Clear scope, fixed price or team rate, and a realistic timeline delivered within 48 hours." },
+      { "step": "03", "title": "Build",           "desc": "Two-week sprints with working software every cycle. Daily async updates, weekly video syncs." },
+      { "step": "04", "title": "Launch & Beyond", "desc": "We handle deployment, monitoring, and a 30-day post-launch warranty. Ongoing support available." }
+    ],
+    "faq": [
+      { "q": "How long does a typical project take?",          "a": "Most web apps take 6–12 weeks from kickoff to launch. Mobile apps typically 8–14 weeks. We'll give you a precise estimate after the discovery call." },
+      { "q": "Do you work with early-stage startups?",         "a": "Absolutely. We've helped many founders go from idea to funded product. We offer MVP-focused scopes designed to validate fast and stay within budget." },
+      { "q": "What does a project cost?",                      "a": "Projects start from $8,000 for a focused MVP. Most full-featured apps range from $20,000–$60,000. We offer fixed-price and dedicated-team models." },
+      { "q": "Who owns the code after the project?",           "a": "You do. Upon final payment, all IP transfers to you. We sign an IP assignment agreement as part of every contract." },
+      { "q": "Can you work with our existing codebase?",       "a": "Yes. We regularly join projects mid-stream — auditing existing code, adding features, or refactoring for scale. We'll do a code review before committing." },
+      { "q": "Do you offer ongoing maintenance after launch?", "a": "Yes. We offer monthly retainer plans for maintenance, monitoring, and feature development. All projects include a 30-day bug-fix warranty at no extra cost." }
+    ],
+
     "heading": "Services That",
     "headingAccent": "Drive Results",
     "subheading": "End‑to‑end development, from idea to live product. We stick with you through launch and beyond.",

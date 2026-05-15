@@ -26,14 +26,14 @@ export default function NewsletterSignup() {
   };
 
   return (
-    <div className="py-12 border-t" style={{ borderColor: "rgba(143,187,249,0.08)" }}>
+    <div className="py-12 border-t" style={{ borderColor: "var(--border-soft)" }}>
       <div className="max-w-xl mx-auto text-center px-4">
         <div className="w-10 h-10 rounded-xl flex items-center justify-center mx-auto mb-4"
-          style={{ background: "rgba(1,112,244,0.15)" }}>
+          style={{ background: "rgba(1,112,244,0.1)" }}>
           <Mail size={18} style={{ color: "#0170f4" }} />
         </div>
-        <h3 className="text-base font-bold text-white mb-1">Stay in the loop</h3>
-        <p className="text-xs mb-5" style={{ color: "#4a6080" }}>
+        <h3 className="text-base font-bold mb-1" style={{ color: "var(--text-primary)" }}>Stay in the loop</h3>
+        <p className="text-xs mb-5" style={{ color: "var(--text-muted)" }}>
           Get occasional updates on new services, case studies, and tech insights. No spam.
         </p>
 
@@ -52,10 +52,10 @@ export default function NewsletterSignup() {
                 placeholder="you@company.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="flex-1 px-4 py-2.5 rounded-xl text-sm text-white placeholder-[#4a6080] outline-none transition-all"
-                style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(143,187,249,0.15)" }}
+                className="flex-1 px-4 py-2.5 rounded-xl text-sm outline-none transition-all"
+                style={{ background: "var(--input-bg)", border: "1px solid var(--input-border)", color: "var(--text-primary)" }}
                 onFocus={(e) => (e.target.style.borderColor = "#0170f4")}
-                onBlur={(e)  => (e.target.style.borderColor = "rgba(143,187,249,0.15)")}
+                onBlur={(e)  => (e.target.style.borderColor = "var(--input-border)")}
               />
               <motion.button
                 type="submit"
@@ -70,7 +70,7 @@ export default function NewsletterSignup() {
             </motion.form>
           )}
         </AnimatePresence>
-        {error && <p className="text-xs text-red-400 mt-2">{error}</p>}
+        {error && <p className="text-xs text-red-500 mt-2">{error}</p>}
       </div>
     </div>
   );

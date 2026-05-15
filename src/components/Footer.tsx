@@ -2,8 +2,24 @@
 
 import { motion } from "framer-motion";
 import { GitFork, Link2, Mail, ArrowUp } from "lucide-react";
+import Link from "next/link";
 import content from "@/content.json";
 import NewsletterSignup from "@/components/NewsletterSignup";
+
+const linkHrefMap: Record<string, string> = {
+  "About":            "/about",
+  "Services":         "/services",
+  "Careers":          "#",
+  "Blog":             "#",
+  "Web Development":  "/services/web-development",
+  "Mobile Apps":      "/services/mobile-apps",
+  "UI/UX Design":     "/services/ui-ux-design",
+  "Backend & APIs":   "/services/backend-apis",
+  "Cloud & DevOps":   "/services/cloud-devops",
+  "Privacy Policy":   "/legal/privacy-policy",
+  "Terms of Service": "/legal/terms-of-service",
+  "Cookie Policy":    "/legal/cookie-policy",
+};
 
 const { footer: f, site } = content;
 
@@ -69,16 +85,17 @@ export default function Footer() {
               <ul className="space-y-2.5">
                 {links.map((link) => (
                   <li key={link}>
-                    <motion.a
-                      href="#"
-                      whileHover={{ x: 4 }}
-                      className="text-sm transition-colors inline-block"
-                      style={{ color: "var(--text-muted)" }}
-                      onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "#0170f4")}
-                      onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "var(--text-muted)")}
-                    >
-                      {link}
-                    </motion.a>
+                    <motion.div whileHover={{ x: 4 }} className="inline-block">
+                      <Link
+                        href={linkHrefMap[link] ?? "#"}
+                        className="text-sm transition-colors"
+                        style={{ color: "var(--text-muted)" }}
+                        onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "#0170f4")}
+                        onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "var(--text-muted)")}
+                      >
+                        {link}
+                      </Link>
+                    </motion.div>
                   </li>
                 ))}
               </ul>
