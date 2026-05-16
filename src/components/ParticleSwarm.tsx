@@ -6,6 +6,13 @@ import { OrbitControls, Effects } from "@react-three/drei";
 import { UnrealBloomPass } from "three-stdlib";
 import * as THREE from "three";
 
+// Suppress THREE.Clock deprecation warning from @react-three/fiber internals
+const _warn = console.warn;
+console.warn = (...args: unknown[]) => {
+  if (typeof args[0] === "string" && args[0].includes("THREE.Clock")) return;
+  _warn(...args);
+};
+
 extend({ UnrealBloomPass });
 
 function ParticleSwarmInner() {

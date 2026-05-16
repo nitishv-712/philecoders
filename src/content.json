@@ -293,13 +293,13 @@
       "subheading": "Tell us about your project. We typically respond within one business day, often faster."
     },
     "info": [
-      { "icon": "Mail",    "label": "Email",    "value": "hello@PhileCoders.dev",              "href": "mailto:hello@PhileCoders.dev" },
+      { "icon": "Mail",    "label": "Email",    "value": "philecoders@gmail.com",              "href": "mailto:philecoders@gmail.com" },
       { "icon": "Phone",   "label": "Phone",    "value": "+1 (415) 202‑8392",                  "href": "tel:+14152028392" },
       { "icon": "MapPin",  "label": "Location", "value": "San Francisco, CA (Remote‑first)",   "href": "#map" }
     ],
     "quickButtons": [
       { "icon": "MessageCircle", "label": "WhatsApp",      "href": "https://wa.me/14152028392",              "color": "#25D366" },
-      { "icon": "Mail",          "label": "Send Email",    "href": "mailto:hello@PhileCoders.dev",           "color": "#0170f4" },
+      { "icon": "Mail",          "label": "Send Email",    "href": "mailto:philecoders@gmail.com",           "color": "#0170f4" },
       { "icon": "Phone",         "label": "Call Us",       "href": "tel:+14152028392",                       "color": "#0157c2" },
       { "icon": "Calendar",      "label": "Book a Call",   "href": "https://calendly.com/philecoders",       "color": "#7c3aed" }
     ],
@@ -354,7 +354,7 @@
       { "label": "GitHub",   "href": "https://github.com/nitishv-712" },
       { "label": "LinkedIn", "href": "#" },
       { "label": "Twitter",  "href": "#" },
-      { "label": "Email",    "href": "mailto:hello@PhileCoders.dev" }
+      { "label": "Email",    "href": "mailto:philecoders@gmail.com" }
     ],
     "links": {
       "Company":  ["About", "Services", "Careers", "Blog"],
