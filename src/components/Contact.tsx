@@ -2,14 +2,14 @@
 
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { Mail, Phone, MapPin, Send, MessageSquare, CheckCircle2 } from "lucide-react";
+import { Mail, Phone, MapPin, Send, MessageSquare, CheckCircle2 , type LucideIcon } from "lucide-react";
 import content from "@/content.json";
 import { submitContact } from "@/lib/firestore";
 
 const { contact } = content;
 const c = { ...contact, badge: contact.hero.badge, heading: contact.hero.heading, headingAccent: contact.hero.headingAccent, subheading: contact.hero.subheading };
 
-const iconMap: Record<string, React.ElementType> = { Mail, Phone, MapPin };
+const iconMap: Record<string, LucideIcon> = { Mail, Phone, MapPin };
 
 const infoAccents = [
   { bg: "rgba(124,58,237,0.10)", color: "#7c3aed" },

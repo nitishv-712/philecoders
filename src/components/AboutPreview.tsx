@@ -2,13 +2,13 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Code2, Clock, ShieldCheck, Headphones, ArrowRight } from "lucide-react";
+import { Code2, Clock, ShieldCheck, Headphones, ArrowRight, type LucideIcon } from "lucide-react";
 import Link from "next/link";
 import content from "@/content.json";
 
 const { aboutPreview: a } = content;
 
-const iconMap: Record<string, React.ElementType> = { Code2, Clock, ShieldCheck, Headphones };
+const iconMap: Record<string, LucideIcon> = { Code2, Clock, ShieldCheck, Headphones };
 
 const cardAccents = [
   { bg: "rgba(1,112,244,0.10)", color: "#0170f4", gradient: "linear-gradient(135deg, #0170f4, #4494f6)" },

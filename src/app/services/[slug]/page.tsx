@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, CheckCircle2 } from "lucide-react";
-import { Globe, Smartphone, Palette, Database, Shield, Zap } from "lucide-react";
+import { Globe, Smartphone, Palette, Database, Shield, Zap, type LucideIcon } from "lucide-react";
 import content from "@/content.json";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -10,7 +10,7 @@ import ReviewForm from "@/components/ReviewForm";
 import ReviewList from "@/components/ReviewList";
 import RelatedServices from "@/components/RelatedServices";
 
-const iconMap: Record<string, React.ElementType> = {
+const iconMap: Record<string, LucideIcon> = {
   Globe, Smartphone, Palette, Database, Shield, Zap,
 };
 

@@ -65,7 +65,7 @@ export default function OurStory() {
                   transition={{ delay: 0.3 + i * 0.1 }}
                   className="relative"
                 >
-                  <div className="absolute -left-9 w-4 h-4 rounded-full border-2 border-[#0170f4] bg-white dark:bg-[#071630]"
+                  <div className="absolute -left-9 w-4 h-4 rounded-full border-2 border-[#0170f4] bg-white"
                     style={{ top: "4px" }} />
                   <div className="p-4 rounded-xl border"
                     style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>

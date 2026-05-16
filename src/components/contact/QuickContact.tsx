@@ -2,11 +2,11 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { MessageCircle, Mail, Phone, Calendar } from "lucide-react";
+import { MessageCircle, Mail, Phone, Calendar , type LucideIcon } from "lucide-react";
 import content from "@/content.json";
 
 const { contact: c } = content;
-const iconMap: Record<string, React.ElementType> = { MessageCircle, Mail, Phone, Calendar };
+const iconMap: Record<string, LucideIcon> = { MessageCircle, Mail, Phone, Calendar };
 
 export default function QuickContact() {
   const ref    = useRef<HTMLDivElement>(null);

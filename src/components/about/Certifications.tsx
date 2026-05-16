@@ -2,12 +2,12 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Award, Star, Trophy, Shield, Users } from "lucide-react";
+import { Award, Star, Trophy, Shield, Users , type LucideIcon } from "lucide-react";
 import content from "@/content.json";
 
 const certs = content.about.certifications;
 
-const iconMap: Record<string, React.ElementType> = { Award, Star, Trophy, Shield, Users };
+const iconMap: Record<string, LucideIcon> = { Award, Star, Trophy, Shield, Users };
 
 export default function Certifications() {
   const ref    = useRef<HTMLDivElement>(null);

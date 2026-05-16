@@ -20,10 +20,8 @@ export default function LegalPage({ badge, title, lastUpdated, intro, sections }
       {/* Hero */}
       <section className="pt-32 pb-16 relative overflow-hidden dot-grid"
         style={{ background: "linear-gradient(160deg, #ede9fe 0%, #e0eeff 40%, #f0f6ff 70%, #faf5ff 100%)" }}>
-        <div className="dark:hidden absolute inset-0 pointer-events-none"
+        <div className="absolute inset-0 pointer-events-none"
           style={{ background: "radial-gradient(circle at 60% 40%, rgba(124,58,237,0.08) 0%, transparent 60%)" }} />
-        <div className="hidden dark:block absolute inset-0"
-          style={{ background: "linear-gradient(160deg, #071630 0%, #10274b 40%, #1e1146 100%)" }} />
 
         <div className="relative max-w-3xl mx-auto px-5 sm:px-8">
           <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }}>

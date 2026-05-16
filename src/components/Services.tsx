@@ -2,13 +2,13 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Globe, Smartphone, Palette, Database, Shield, Zap, ArrowUpRight } from "lucide-react";
+import { Globe, Smartphone, Palette, Database, Shield, Zap, ArrowUpRight , type LucideIcon } from "lucide-react";
 import Link from "next/link";
 import content from "@/content.json";
 
 const { services: s } = content;
 
-const iconMap: Record<string, React.ElementType> = {
+const iconMap: Record<string, LucideIcon> = {
   Globe, Smartphone, Palette, Database, Shield, Zap,
 };
 
@@ -72,12 +72,12 @@ const serviceStyles: Record<string, {
 
 // col-span / row-span / layout direction per card index
 const mosaicLayout = [
-  { colSpan: "col-span-2", rowSpan: "row-span-1", wide: true }, // 0 — full-width hero
-  { colSpan: "col-span-1", rowSpan: "row-span-2", wide: false }, // 1 — tall
+  { colSpan: "col-span-1 sm:col-span-2", rowSpan: "row-span-1", wide: true }, // 0 — full-width hero
+  { colSpan: "col-span-1", rowSpan: "sm:row-span-2", wide: false }, // 1 — tall
   { colSpan: "col-span-1", rowSpan: "row-span-1", wide: false }, // 2 — normal
   { colSpan: "col-span-1", rowSpan: "row-span-1", wide: false }, // 3 — normal
   { colSpan: "col-span-1", rowSpan: "row-span-1", wide: false }, // 4 — normal
-  { colSpan: "col-span-2", rowSpan: "row-span-1", wide: true }, // 5 — full-width footer
+  { colSpan: "col-span-1 sm:col-span-2 lg:col-span-3", rowSpan: "row-span-1", wide: true }, // 5 — full-width footer
 ];
 
 function ServiceBlock({ item, index }: { item: typeof s.items[0]; index: number }) {
@@ -98,7 +98,7 @@ function ServiceBlock({ item, index }: { item: typeof s.items[0]; index: number 
     >
       <Link href={`/services/${item.slug}`} className="block h-full">
         <div
-          className={`relative h-full rounded-2xl border overflow-hidden transition-all duration-300 hover:-translate-y-1 p-7 ${layout.wide ? "flex items-center gap-10" : "flex flex-col"
+          className={`relative h-full rounded-2xl border overflow-hidden transition-all duration-300 hover:-translate-y-1 p-5 sm:p-7 ${layout.wide ? "flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-10" : "flex flex-col"
             }`}
           style={{
             background: style.bg,
@@ -137,7 +137,7 @@ function ServiceBlock({ item, index }: { item: typeof s.items[0]; index: number 
 
           {/* Icon */}
           <div
-            className={`flex-shrink-0 rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110 ${layout.wide ? "w-16 h-16" : "w-12 h-12 mb-auto"
+            className={`flex-shrink-0 rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110 ${layout.wide ? "w-12 h-12 sm:w-16 sm:h-16" : "w-12 h-12 mb-auto"
               }`}
             style={{
               background: isDark ? "rgba(255,255,255,0.1)" : `${style.iconColor}18`,
@@ -247,8 +247,8 @@ export default function Services() {
         </div>
 
         <div
-          className="grid grid-cols-3 gap-4"
-          style={{ gridAutoRows: "180px" }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
+          style={{ gridAutoRows: "auto" }}
         >
           {s.items.map((item, i) => (
             <ServiceBlock key={item.slug} item={item} index={i} />

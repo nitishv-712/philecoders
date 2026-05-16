@@ -2,12 +2,12 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Target, Eye, Heart, Code2, MessageCircle, Zap } from "lucide-react";
+import { Target, Eye, Heart, Code2, MessageCircle, Zap , type LucideIcon } from "lucide-react";
 import content from "@/content.json";
 
 const mv = content.about.mission;
 
-const iconMap: Record<string, React.ElementType> = { Target, Eye, Heart, Code2, MessageCircle, Zap };
+const iconMap: Record<string, LucideIcon> = { Target, Eye, Heart, Code2, MessageCircle, Zap };
 
 export default function MissionVision() {
   const ref    = useRef<HTMLDivElement>(null);

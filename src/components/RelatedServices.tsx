@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Zap, Globe, Smartphone, Palette, Database, Shield } from "lucide-react";
+import { ArrowRight, Zap, Globe, Smartphone, Palette, Database, Shield , type LucideIcon } from "lucide-react";
 
-const iconMap: Record<string, React.ElementType> = {
+const iconMap: Record<string, LucideIcon> = {
   Globe, Smartphone, Palette, Database, Shield, Zap,
 };
 

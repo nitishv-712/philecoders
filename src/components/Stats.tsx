@@ -2,12 +2,12 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Briefcase, Users, Calendar, TrendingUp, Star, Clock } from "lucide-react";
+import { Briefcase, Users, Calendar, TrendingUp, Star, Clock , type LucideIcon } from "lucide-react";
 import content from "@/content.json";
 
 const { stats: s } = content;
 
-const iconMap: Record<string, React.ElementType> = { Briefcase, Users, Calendar, TrendingUp, Star, Clock };
+const iconMap: Record<string, LucideIcon> = { Briefcase, Users, Calendar, TrendingUp, Star, Clock };
 
 const statColors = [
   "rgba(167,139,250,0.25)",

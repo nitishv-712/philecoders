@@ -2,12 +2,12 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { ShieldCheck, FileText, RefreshCw, Lock } from "lucide-react";
+import { ShieldCheck, FileText, RefreshCw, Lock , type LucideIcon } from "lucide-react";
 import content from "@/content.json";
 
 const trust = content.about.trust;
 
-const iconMap: Record<string, React.ElementType> = { ShieldCheck, FileText, RefreshCw, Lock };
+const iconMap: Record<string, LucideIcon> = { ShieldCheck, FileText, RefreshCw, Lock };
 
 export default function WhyTrustUs() {
   const ref    = useRef<HTMLDivElement>(null);

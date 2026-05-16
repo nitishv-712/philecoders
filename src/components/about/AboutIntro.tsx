@@ -11,10 +11,8 @@ export default function AboutIntro() {
   return (
     <section className="pt-32 pb-20 relative overflow-hidden dot-grid"
       style={{ background: "linear-gradient(160deg, #dbeafe 0%, #eff6ff 55%, #e0eeff 100%)" }}>
-      <div className="dark:hidden absolute inset-0 pointer-events-none"
+      <div className="absolute inset-0 pointer-events-none"
         style={{ background: "radial-gradient(circle at 60% 40%, rgba(1,112,244,0.1) 0%, transparent 60%)" }} />
-      <div className="hidden dark:block absolute inset-0"
-        style={{ background: "linear-gradient(160deg, #071630 0%, #10274b 55%, #0157c2 100%)" }} />
 
       <div className="relative max-w-7xl mx-auto px-5 sm:px-8">
         <div className="max-w-3xl mx-auto text-center mb-16">

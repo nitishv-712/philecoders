@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { GitFork, Link2, Mail, ArrowUp } from "lucide-react";
+import { GitFork, Link2, Mail, ArrowUp , type LucideIcon } from "lucide-react";
 import Link from "next/link";
 import content from "@/content.json";
 import NewsletterSignup from "@/components/NewsletterSignup";
@@ -23,7 +23,7 @@ const linkHrefMap: Record<string, string> = {
 
 const { footer: f, site } = content;
 
-const socialIconMap: Record<string, React.ElementType> = {
+const socialIconMap: Record<string, LucideIcon> = {
   GitHub: GitFork, Twitter: Link2, LinkedIn: Link2, Email: Mail,
 };
 

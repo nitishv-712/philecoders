@@ -2,12 +2,12 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Rocket, Users, DollarSign, FileText, Globe, Star } from "lucide-react";
+import { Rocket, Users, DollarSign, FileText, Globe, Star , type LucideIcon } from "lucide-react";
 import content from "@/content.json";
 
 const { whyChooseUs: w } = content;
 
-const iconMap: Record<string, React.ElementType> = {
+const iconMap: Record<string, LucideIcon> = {
   Rocket,
   Users,
   DollarSign,
