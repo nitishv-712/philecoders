@@ -1,10 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { GitFork, Link2, Mail, ArrowUp , type LucideIcon } from "lucide-react";
+import { GitFork, Link2, X, Mail, ArrowUp, type LucideIcon } from "lucide-react";
 import Link from "next/link";
 import content from "@/content.json";
-import NewsletterSignup from "@/components/NewsletterSignup";
 
 const linkHrefMap: Record<string, string> = {
   "About":            "/about",
@@ -24,7 +23,7 @@ const linkHrefMap: Record<string, string> = {
 const { footer: f, site } = content;
 
 const socialIconMap: Record<string, LucideIcon> = {
-  GitHub: GitFork, Twitter: Link2, LinkedIn: Link2, Email: Mail,
+  GitHub: GitFork, Twitter: X, LinkedIn: Link2, Email: Mail,
 };
 
 const socialHoverColors: Record<string, string> = {
@@ -107,14 +106,10 @@ export default function Footer() {
           ))}
         </div>
 
-        <NewsletterSignup />
-
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4"
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-3"
           style={{ borderTop: "1px solid var(--border-soft)" }}>
-          <p className="text-xs" style={{ color: "var(--text-faint)" }}>
-            © {new Date().getFullYear()} {f.copyright}
-          </p>
-          <p className="text-xs" style={{ color: "var(--text-faint)" }}>{f.builtWith}</p>
+          <p className="text-xs" style={{ color: "var(--text-faint)" }}>{f.copyright}</p>
+          <p className="text-xs px-3 py-1 rounded-full" style={{ color: "var(--text-faint)", background: "var(--badge-bg)" }}>{f.builtWith}</p>
           <motion.button
             onClick={scrollTop}
             whileHover={{ scale: 1.1, y: -2 }}

@@ -49,7 +49,7 @@ const sections = [
     heading: "Your Rights",
     body: [
       "You have the right to access, correct, or delete the personal information we hold about you. You may also object to or restrict certain processing of your data.",
-      "To exercise any of these rights, please contact us at hello@PhileCoders.dev. We will respond within 30 days.",
+      "To exercise any of these rights, please contact us at philecoders@gmail.com. We will respond within 30 days.",
     ],
   },
   {

@@ -109,8 +109,8 @@ export default function LegalPage({ badge, title, lastUpdated, intro, sections }
           >
             <p className="text-sm" style={{ color: "var(--text-muted)" }}>
               Questions about this policy? Contact us at{" "}
-              <a href="mailto:hello@PhileCoders.dev" className="font-semibold" style={{ color: "#7c3aed" }}>
-                hello@PhileCoders.dev
+              <a href="mailto:philecoders@gmail.com" className="font-semibold" style={{ color: "#7c3aed" }}>
+                philecoders@gmail.com
               </a>
             </p>
           </motion.div>
