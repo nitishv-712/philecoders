@@ -141,10 +141,21 @@ export default function Hero() {
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "28%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.75], [1, 0]);
   const [showParticles, setShowParticles] = useState(false);
+  const [inView, setInView] = useState(true);
 
   useEffect(() => {
     const t = setTimeout(() => setShowParticles(true), 800);
     return () => clearTimeout(t);
+  }, []);
+
+  useEffect(() => {
+    if (!ref.current) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setInView(entry.isIntersecting),
+      { threshold: 0.05 }
+    );
+    observer.observe(ref.current);
+    return () => observer.disconnect();
   }, []);
 
   return (
@@ -158,10 +169,10 @@ export default function Hero() {
         <motion.div
           className="absolute inset-0"
           initial={{ opacity: 0 }}
-          animate={{ opacity: showParticles ? 1 : 0 }}
+          animate={{ opacity: showParticles && inView ? 1 : 0 }}
           transition={{ duration: 1.2, ease: "easeIn" }}
         >
-          {showParticles && <ParticleSwarm />}
+          {showParticles && inView && <ParticleSwarm />}
         </motion.div>
         <div
           className="absolute inset-0 pointer-events-none"

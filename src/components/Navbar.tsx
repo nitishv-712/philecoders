@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import content from "@/content.json";
@@ -40,10 +41,7 @@ export default function Navbar() {
           {/* Logo */}
           <motion.div whileHover={{ scale: 1.02 }}>
             <Link href="/" className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center shadow-md"
-                style={{ background: "linear-gradient(135deg, #7c3aed 0%, #0170f4 100%)" }}>
-                <span className="text-xs font-black text-white tracking-tight">{site.logo}</span>
-              </div>
+              <Image src="/pc-only.png" alt="PhileCoders logo" width={32} height={32} priority />
               <span className="font-bold text-[17px] tracking-tight">
                 <span className="gradient-text">{site.name.slice(0, 5)}</span>
                 <span style={{ color: "var(--text-primary)" }}>{site.name.slice(5)}</span>
