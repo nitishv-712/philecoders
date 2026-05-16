@@ -6,52 +6,131 @@
   },
   "navbar": {
     "links": [
-      { "label": "Home",      "href": "/" },
-      { "label": "About",     "href": "/about" },
-      { "label": "Services",  "href": "/services" },
-      { "label": "Contact",   "href": "/contact" }
+      {
+        "label": "Home",
+        "href": "/"
+      },
+      {
+        "label": "About",
+        "href": "/about"
+      },
+      {
+        "label": "Services",
+        "href": "/services"
+      },
+      {
+        "label": "Contact",
+        "href": "/contact"
+      }
     ],
     "cta": "Start a Project"
   },
   "hero": {
     "badge": "Trusted Software Development Partner",
-    "typewriterWords": ["Analyze.", "Design.", "Develop.", "Launch.", "Grow."],
+    "typewriterWords": [
+      "Analyze.",
+      "Design.",
+      "Develop.",
+      "Launch.",
+      "Grow."
+    ],
     "headlinePre": "We",
     "headlinePost": "Your Vision.",
     "description": "PhileCoders builds reliable web apps, mobile products, and digital platforms that help businesses scale without the overhead.",
-    "ctaPrimary":   { "label": "See Our Work",   "href": "#portfolio" },
-    "ctaSecondary": { "label": "Let's Talk",      "href": "/contact" },
+    "ctaPrimary": {
+      "label": "See Our Work",
+      "href": "#portfolio"
+    },
+    "ctaSecondary": {
+      "label": "Let's Talk",
+      "href": "/contact"
+    },
     "stats": [
-      { "value": "48+", "label": "Projects Shipped" },
-      { "value": "32+", "label": "Clients Served" },
-      { "value": "6+",  "label": "Years in Business" },
-      { "value": "98%", "label": "Client Retention" }
+      {
+        "value": "48+",
+        "label": "Projects Shipped"
+      },
+      {
+        "value": "32+",
+        "label": "Clients Served"
+      },
+      {
+        "value": "6+",
+        "label": "Years in Business"
+      },
+      {
+        "value": "98%",
+        "label": "Client Retention"
+      }
     ]
   },
   "aboutPreview": {
     "badge": "Who We Are",
     "heading": "A Team That",
     "headingAccent": "Ships.",
-    "description": "We're a lean crew of senior engineers and designers who've shipped products for startups and Fortune 500s alike. No fluff — just clean code, honest timelines, and software that works.",
+    "description": "We're a lean crew of senior engineers and designers who've shipped products for startups and Fortune 500s alike. No fluff \u2014 just clean code, honest timelines, and software that works.",
     "highlights": [
-      { "icon": "Code2",      "label": "Clean Code",        "desc": "Readable, tested, maintainable" },
-      { "icon": "Clock",      "label": "On-time Delivery",  "desc": "95% of projects on schedule" },
-      { "icon": "ShieldCheck","label": "Secure by Default", "desc": "Security baked in from day one" },
-      { "icon": "Headphones", "label": "Post-launch Support","desc": "We don't disappear after go-live" }
+      {
+        "icon": "Code2",
+        "label": "Clean Code",
+        "desc": "Readable, tested, maintainable"
+      },
+      {
+        "icon": "Clock",
+        "label": "On-time Delivery",
+        "desc": "95% of projects on schedule"
+      },
+      {
+        "icon": "ShieldCheck",
+        "label": "Secure by Default",
+        "desc": "Security baked in from day one"
+      },
+      {
+        "icon": "Headphones",
+        "label": "Post-launch Support",
+        "desc": "We don't disappear after go-live"
+      }
     ],
-    "cta": { "label": "Meet the Team", "href": "/about" }
+    "cta": {
+      "label": "Meet the Team",
+      "href": "/about"
+    }
   },
   "whyChooseUs": {
     "badge": "Why PhileCoders",
     "heading": "Built Different,",
     "headingAccent": "By Design",
     "reasons": [
-      { "icon": "Rocket",      "title": "Fast Turnaround",      "desc": "Two-week sprints with working software every cycle. No endless planning phases." },
-      { "icon": "Users",       "title": "Senior-only Team",     "desc": "Every project is handled by senior engineers — no juniors learning on your dime." },
-      { "icon": "DollarSign",  "title": "Transparent Pricing",  "desc": "Fixed-price or dedicated team. You always know what you're paying and why." },
-      { "icon": "FileText",    "title": "Full Documentation",   "desc": "Handover includes full docs, runbooks, and a knowledge-transfer session." },
-      { "icon": "Globe",       "title": "Remote-first",         "desc": "Async-friendly workflow with daily updates and weekly video syncs." },
-      { "icon": "Star",        "title": "5-Star Track Record",  "desc": "4.9 average rating across 32+ clients. We earn repeat business." }
+      {
+        "icon": "Rocket",
+        "title": "Fast Turnaround",
+        "desc": "Two-week sprints with working software every cycle. No endless planning phases."
+      },
+      {
+        "icon": "Users",
+        "title": "Senior-only Team",
+        "desc": "Every project is handled by senior engineers \u2014 no juniors learning on your dime."
+      },
+      {
+        "icon": "DollarSign",
+        "title": "Transparent Pricing",
+        "desc": "Fixed-price or dedicated team. You always know what you're paying and why."
+      },
+      {
+        "icon": "FileText",
+        "title": "Full Documentation",
+        "desc": "Handover includes full docs, runbooks, and a knowledge-transfer session."
+      },
+      {
+        "icon": "Globe",
+        "title": "Remote-first",
+        "desc": "Async-friendly workflow with daily updates and weekly video syncs."
+      },
+      {
+        "icon": "Star",
+        "title": "5-Star Track Record",
+        "desc": "4.9 average rating across 32+ clients. We earn repeat business."
+      }
     ]
   },
   "stats": {
@@ -59,44 +138,101 @@
     "heading": "Results That",
     "headingAccent": "Speak",
     "items": [
-      { "value": "48+",  "label": "Projects Delivered",  "icon": "Briefcase" },
-      { "value": "32+",  "label": "Happy Clients",        "icon": "Users" },
-      { "value": "6+",   "label": "Years Experience",     "icon": "Calendar" },
-      { "value": "98%",  "label": "Client Retention",     "icon": "TrendingUp" },
-      { "value": "4.9★", "label": "Average Rating",       "icon": "Star" },
-      { "value": "24h",  "label": "Avg. Response Time",   "icon": "Clock" }
+      {
+        "value": "48+",
+        "label": "Projects Delivered",
+        "icon": "Briefcase"
+      },
+      {
+        "value": "32+",
+        "label": "Happy Clients",
+        "icon": "Users"
+      },
+      {
+        "value": "6+",
+        "label": "Years Experience",
+        "icon": "Calendar"
+      },
+      {
+        "value": "98%",
+        "label": "Client Retention",
+        "icon": "TrendingUp"
+      },
+      {
+        "value": "4.9\u2605",
+        "label": "Average Rating",
+        "icon": "Star"
+      },
+      {
+        "value": "24h",
+        "label": "Avg. Response Time",
+        "icon": "Clock"
+      }
     ]
   },
   "cta": {
     "badge": "Let's work together",
     "heading": "Ready to Build Something Great?",
-    "subheading": "Book a free 30-minute discovery call. We'll listen to your goals and recommend the right approach — no commitment required.",
+    "subheading": "Book a free 30-minute discovery call. We'll listen to your goals and recommend the right approach \u2014 no commitment required.",
     "primaryLabel": "Start a Project",
-    "primaryHref":  "/contact",
+    "primaryHref": "/contact",
     "secondaryLabel": "View Our Work",
-    "secondaryHref":  "/contact",
+    "secondaryHref": "/contact",
     "socialProof": "Trusted by 200+ teams worldwide"
   },
   "services": {
     "badge": "What We Do",
     "process": [
-      { "step": "01", "title": "Discovery",       "desc": "Free 30-min call to understand your goals, constraints, and timeline. No commitment required." },
-      { "step": "02", "title": "Proposal",        "desc": "Clear scope, fixed price or team rate, and a realistic timeline delivered within 48 hours." },
-      { "step": "03", "title": "Build",           "desc": "Two-week sprints with working software every cycle. Daily async updates, weekly video syncs." },
-      { "step": "04", "title": "Launch & Beyond", "desc": "We handle deployment, monitoring, and a 30-day post-launch warranty. Ongoing support available." }
+      {
+        "step": "01",
+        "title": "Discovery",
+        "desc": "Free 30-min call to understand your goals, constraints, and timeline. No commitment required."
+      },
+      {
+        "step": "02",
+        "title": "Proposal",
+        "desc": "Clear scope, fixed price or team rate, and a realistic timeline delivered within 48 hours."
+      },
+      {
+        "step": "03",
+        "title": "Build",
+        "desc": "Two-week sprints with working software every cycle. Daily async updates, weekly video syncs."
+      },
+      {
+        "step": "04",
+        "title": "Launch & Beyond",
+        "desc": "We handle deployment, monitoring, and a 30-day post-launch warranty. Ongoing support available."
+      }
     ],
     "faq": [
-      { "q": "How long does a typical project take?",          "a": "Most web apps take 6–12 weeks from kickoff to launch. Mobile apps typically 8–14 weeks. We'll give you a precise estimate after the discovery call." },
-      { "q": "Do you work with early-stage startups?",         "a": "Absolutely. We've helped many founders go from idea to funded product. We offer MVP-focused scopes designed to validate fast and stay within budget." },
-      { "q": "What does a project cost?",                      "a": "Projects start from $8,000 for a focused MVP. Most full-featured apps range from $20,000–$60,000. We offer fixed-price and dedicated-team models." },
-      { "q": "Who owns the code after the project?",           "a": "You do. Upon final payment, all IP transfers to you. We sign an IP assignment agreement as part of every contract." },
-      { "q": "Can you work with our existing codebase?",       "a": "Yes. We regularly join projects mid-stream — auditing existing code, adding features, or refactoring for scale. We'll do a code review before committing." },
-      { "q": "Do you offer ongoing maintenance after launch?", "a": "Yes. We offer monthly retainer plans for maintenance, monitoring, and feature development. All projects include a 30-day bug-fix warranty at no extra cost." }
+      {
+        "q": "How long does a typical project take?",
+        "a": "Most web apps take 6\u201312 weeks from kickoff to launch. Mobile apps typically 8\u201314 weeks. We'll give you a precise estimate after the discovery call."
+      },
+      {
+        "q": "Do you work with early-stage startups?",
+        "a": "Absolutely. We've helped many founders go from idea to funded product. We offer MVP-focused scopes designed to validate fast and stay within budget."
+      },
+      {
+        "q": "What does a project cost?",
+        "a": "Projects start from $8,000 for a focused MVP. Most full-featured apps range from $20,000\u2013$60,000. We offer fixed-price and dedicated-team models."
+      },
+      {
+        "q": "Who owns the code after the project?",
+        "a": "You do. Upon final payment, all IP transfers to you. We sign an IP assignment agreement as part of every contract."
+      },
+      {
+        "q": "Can you work with our existing codebase?",
+        "a": "Yes. We regularly join projects mid-stream \u2014 auditing existing code, adding features, or refactoring for scale. We'll do a code review before committing."
+      },
+      {
+        "q": "Do you offer ongoing maintenance after launch?",
+        "a": "Yes. We offer monthly retainer plans for maintenance, monitoring, and feature development. All projects include a 30-day bug-fix warranty at no extra cost."
+      }
     ],
-
     "heading": "Services That",
     "headingAccent": "Drive Results",
-    "subheading": "End‑to‑end development, from idea to live product. We stick with you through launch and beyond.",
+    "subheading": "End\u2011to\u2011end development, from idea to live product. We stick with you through launch and beyond.",
     "items": [
       {
         "slug": "web-development",
@@ -104,26 +240,59 @@
         "title": "Web Development",
         "description": "Custom web apps and marketing sites built with React, Next.js, and a focus on performance and SEO.",
         "longDescription": "We build fast, accessible, and SEO-optimised web applications using the latest React and Next.js patterns. From landing pages to complex SaaS dashboards, every project is crafted with clean code, responsive design, and production-grade performance in mind.",
-        "tags": ["React", "Next.js", "TypeScript"],
-        "features": ["Server-side rendering & static generation", "SEO & Core Web Vitals optimisation", "Responsive, accessible UI", "CMS integration (Sanity, Contentful)", "Auth, payments & third-party APIs", "Ongoing maintenance & support"]
+        "tags": [
+          "React",
+          "Next.js",
+          "TypeScript"
+        ],
+        "features": [
+          "Server-side rendering & static generation",
+          "SEO & Core Web Vitals optimisation",
+          "Responsive, accessible UI",
+          "CMS integration (Sanity, Contentful)",
+          "Auth, payments & third-party APIs",
+          "Ongoing maintenance & support"
+        ]
       },
       {
         "slug": "mobile-apps",
         "icon": "Smartphone",
         "title": "Mobile Apps",
-        "description": "Cross‑platform iOS & Android apps using React Native or Flutter, with smooth native feel.",
-        "longDescription": "We ship polished iOS and Android apps from a single codebase using React Native or Flutter. Our mobile apps are built for performance, offline support, and seamless app-store submission — with full QA on real devices.",
-        "tags": ["React Native", "Flutter", "iOS & Android"],
-        "features": ["Single codebase for iOS & Android", "Offline-first architecture", "Push notifications", "App Store & Play Store submission", "Deep linking & analytics", "OTA updates"]
+        "description": "Cross\u2011platform iOS & Android apps using React Native or Flutter, with smooth native feel.",
+        "longDescription": "We ship polished iOS and Android apps from a single codebase using React Native or Flutter. Our mobile apps are built for performance, offline support, and seamless app-store submission \u2014 with full QA on real devices.",
+        "tags": [
+          "React Native",
+          "Flutter",
+          "iOS & Android"
+        ],
+        "features": [
+          "Single codebase for iOS & Android",
+          "Offline-first architecture",
+          "Push notifications",
+          "App Store & Play Store submission",
+          "Deep linking & analytics",
+          "OTA updates"
+        ]
       },
       {
         "slug": "ui-ux-design",
         "icon": "Palette",
         "title": "UI/UX Design",
-        "description": "User‑centered design from wireframes to high‑fidelity prototypes, validated with real user feedback.",
+        "description": "User\u2011centered design from wireframes to high\u2011fidelity prototypes, validated with real user feedback.",
         "longDescription": "Great software starts with great design. We run discovery workshops, build wireframes, and deliver pixel-perfect Figma prototypes that your developers can implement directly. Every design decision is backed by user research and accessibility standards.",
-        "tags": ["Figma", "User Research", "Design Systems"],
-        "features": ["Discovery workshops", "User journey mapping", "Wireframes & prototypes", "Design system creation", "Usability testing", "Developer handoff"]
+        "tags": [
+          "Figma",
+          "User Research",
+          "Design Systems"
+        ],
+        "features": [
+          "Discovery workshops",
+          "User journey mapping",
+          "Wireframes & prototypes",
+          "Design system creation",
+          "Usability testing",
+          "Developer handoff"
+        ]
       },
       {
         "slug": "backend-apis",
@@ -131,8 +300,19 @@
         "title": "Backend & APIs",
         "description": "Reliable serverless or containerized backends with REST or GraphQL APIs that scale with your traffic.",
         "longDescription": "We architect and build backends that are secure, observable, and ready to scale. Whether you need a simple REST API or a complex event-driven microservices system, we choose the right tool for your traffic and budget.",
-        "tags": ["Node.js", "PostgreSQL", "GraphQL"],
-        "features": ["REST & GraphQL APIs", "Serverless & containerised", "Database design & migrations", "Auth (JWT, OAuth, SSO)", "Rate limiting & security", "Monitoring & alerting"]
+        "tags": [
+          "Node.js",
+          "PostgreSQL",
+          "GraphQL"
+        ],
+        "features": [
+          "REST & GraphQL APIs",
+          "Serverless & containerised",
+          "Database design & migrations",
+          "Auth (JWT, OAuth, SSO)",
+          "Rate limiting & security",
+          "Monitoring & alerting"
+        ]
       },
       {
         "slug": "cloud-devops",
@@ -140,17 +320,39 @@
         "title": "Cloud & DevOps",
         "description": "Automated CI/CD pipelines, AWS and GCP infrastructure, and monitoring so your app runs 24/7.",
         "longDescription": "We set up the infrastructure so your team can ship confidently. From zero-downtime deployments to cost-optimised cloud architecture, we handle the ops so you can focus on product.",
-        "tags": ["AWS", "Docker", "CI/CD"],
-        "features": ["CI/CD pipeline setup", "AWS / GCP infrastructure", "Docker & Kubernetes", "Zero-downtime deployments", "Cost optimisation", "24/7 uptime monitoring"]
+        "tags": [
+          "AWS",
+          "Docker",
+          "CI/CD"
+        ],
+        "features": [
+          "CI/CD pipeline setup",
+          "AWS / GCP infrastructure",
+          "Docker & Kubernetes",
+          "Zero-downtime deployments",
+          "Cost optimisation",
+          "24/7 uptime monitoring"
+        ]
       },
       {
         "slug": "performance-tuning",
         "icon": "Zap",
         "title": "Performance Tuning",
         "description": "Site audits, Core Web Vitals optimization, and caching strategies that improve load times and SEO.",
-        "longDescription": "Slow sites lose users and rankings. We audit your existing application, identify bottlenecks, and implement targeted fixes — from image optimisation and code splitting to CDN configuration and database query tuning.",
-        "tags": ["Core Web Vitals", "Lighthouse", "Caching"],
-        "features": ["Full Lighthouse audit", "Core Web Vitals fixes", "Image & asset optimisation", "Code splitting & lazy loading", "CDN & caching strategy", "Database query optimisation"]
+        "longDescription": "Slow sites lose users and rankings. We audit your existing application, identify bottlenecks, and implement targeted fixes \u2014 from image optimisation and code splitting to CDN configuration and database query tuning.",
+        "tags": [
+          "Core Web Vitals",
+          "Lighthouse",
+          "Caching"
+        ],
+        "features": [
+          "Full Lighthouse audit",
+          "Core Web Vitals fixes",
+          "Image & asset optimisation",
+          "Code splitting & lazy loading",
+          "CDN & caching strategy",
+          "Database query optimisation"
+        ]
       }
     ]
   },
@@ -161,10 +363,22 @@
       "headingAccent": "Big Impact",
       "description": "We're a lean team of senior engineers and designers who've worked with both startups and Fortune 500s. We believe in clean code, honest timelines, and products that solve real problems.",
       "stats": [
-        { "value": "32+", "label": "Happy Clients" },
-        { "value": "48+", "label": "Projects Delivered" },
-        { "value": "6+",  "label": "Years Active" },
-        { "value": "98%", "label": "Retention Rate" }
+        {
+          "value": "32+",
+          "label": "Happy Clients"
+        },
+        {
+          "value": "48+",
+          "label": "Projects Delivered"
+        },
+        {
+          "value": "6+",
+          "label": "Years Active"
+        },
+        {
+          "value": "98%",
+          "label": "Retention Rate"
+        }
       ]
     },
     "story": {
@@ -172,16 +386,31 @@
       "heading": "How We",
       "headingAccent": "Started",
       "paragraphs": [
-        "PhileCoders was founded in 2018 by a group of engineers frustrated with agencies that over-promised and under-delivered. We set out to build a different kind of software company — one where senior talent does the actual work, timelines are honest, and clients are treated as partners.",
+        "PhileCoders was founded in 2018 by a group of engineers frustrated with agencies that over-promised and under-delivered. We set out to build a different kind of software company \u2014 one where senior talent does the actual work, timelines are honest, and clients are treated as partners.",
         "Over six years we've grown from a two-person consultancy to a tight-knit team of twelve, shipping everything from early-stage MVPs to enterprise-grade platforms. We've stayed deliberately small so every client gets our best work.",
         "Today we work with founders, product teams, and CTOs across North America and Europe. Our model is simple: understand the problem deeply, build the right solution, and stand behind it after launch."
       ],
       "milestones": [
-        { "year": "2018", "event": "Founded in San Francisco" },
-        { "year": "2019", "event": "First enterprise client — Fortune 500 retail" },
-        { "year": "2021", "event": "Expanded to mobile & DevOps practices" },
-        { "year": "2023", "event": "Crossed 40 projects delivered" },
-        { "year": "2024", "event": "Launched dedicated AI/ML service line" }
+        {
+          "year": "2018",
+          "event": "Founded in San Francisco"
+        },
+        {
+          "year": "2019",
+          "event": "First enterprise client \u2014 Fortune 500 retail"
+        },
+        {
+          "year": "2021",
+          "event": "Expanded to mobile & DevOps practices"
+        },
+        {
+          "year": "2023",
+          "event": "Crossed 40 projects delivered"
+        },
+        {
+          "year": "2024",
+          "event": "Launched dedicated AI/ML service line"
+        }
       ]
     },
     "mission": {
@@ -189,18 +418,34 @@
       "mission": {
         "icon": "Target",
         "title": "Our Mission",
-        "text": "To build software that solves real problems — delivered on time, on budget, and built to last. We measure success by the outcomes our clients achieve, not just the code we ship."
+        "text": "To build software that solves real problems \u2014 delivered on time, on budget, and built to last. We measure success by the outcomes our clients achieve, not just the code we ship."
       },
       "vision": {
         "icon": "Eye",
         "title": "Our Vision",
-        "text": "A world where every great idea gets the engineering talent it deserves. We want to be the team that turns ambitious visions into reliable, scalable products — regardless of company size."
+        "text": "A world where every great idea gets the engineering talent it deserves. We want to be the team that turns ambitious visions into reliable, scalable products \u2014 regardless of company size."
       },
       "values": [
-        { "icon": "Heart",       "label": "Client First",    "desc": "Every decision starts with what's best for the client." },
-        { "icon": "Code2",       "label": "Craft",           "desc": "We take pride in clean, well-tested, maintainable code." },
-        { "icon": "MessageCircle","label": "Transparency",   "desc": "No surprises. Honest updates, even when it's bad news." },
-        { "icon": "Zap",         "label": "Speed",           "desc": "We move fast without cutting corners on quality." }
+        {
+          "icon": "Heart",
+          "label": "Client First",
+          "desc": "Every decision starts with what's best for the client."
+        },
+        {
+          "icon": "Code2",
+          "label": "Craft",
+          "desc": "We take pride in clean, well-tested, maintainable code."
+        },
+        {
+          "icon": "MessageCircle",
+          "label": "Transparency",
+          "desc": "No surprises. Honest updates, even when it's bad news."
+        },
+        {
+          "icon": "Zap",
+          "label": "Speed",
+          "desc": "We move fast without cutting corners on quality."
+        }
       ]
     },
     "team": {
@@ -208,12 +453,72 @@
       "heading": "The People",
       "headingAccent": "Behind the Code",
       "members": [
-        { "name": "Nitish V.",    "role": "Founder & Lead Engineer",  "avatar": "NV", "skills": ["React", "Node.js", "AWS"],          "bio": "10+ years building products from 0 to 1." },
-        { "name": "Priya S.",     "role": "UI/UX Lead",               "avatar": "PS", "skills": ["Figma", "Design Systems", "Research"],"bio": "Obsessed with accessible, delightful interfaces." },
-        { "name": "Arjun M.",     "role": "Backend Engineer",         "avatar": "AM", "skills": ["PostgreSQL", "GraphQL", "Docker"],   "bio": "Loves distributed systems and clean APIs." },
-        { "name": "Sara K.",      "role": "Mobile Engineer",          "avatar": "SK", "skills": ["React Native", "Flutter", "iOS"],    "bio": "Ships polished apps on both platforms." },
-        { "name": "Dev P.",       "role": "DevOps Engineer",          "avatar": "DP", "skills": ["Kubernetes", "Terraform", "CI/CD"],  "bio": "Keeps everything running at 99.9% uptime." },
-        { "name": "Meera R.",     "role": "Project Manager",          "avatar": "MR", "skills": ["Agile", "Jira", "Client Relations"], "bio": "Makes sure nothing falls through the cracks." }
+        {
+          "name": "Nitish V.",
+          "role": "Founder & Lead Engineer",
+          "avatar": "NV",
+          "skills": [
+            "React",
+            "Node.js",
+            "AWS"
+          ],
+          "bio": "10+ years building products from 0 to 1."
+        },
+        {
+          "name": "Priya S.",
+          "role": "UI/UX Lead",
+          "avatar": "PS",
+          "skills": [
+            "Figma",
+            "Design Systems",
+            "Research"
+          ],
+          "bio": "Obsessed with accessible, delightful interfaces."
+        },
+        {
+          "name": "Arjun M.",
+          "role": "Backend Engineer",
+          "avatar": "AM",
+          "skills": [
+            "PostgreSQL",
+            "GraphQL",
+            "Docker"
+          ],
+          "bio": "Loves distributed systems and clean APIs."
+        },
+        {
+          "name": "Sara K.",
+          "role": "Mobile Engineer",
+          "avatar": "SK",
+          "skills": [
+            "React Native",
+            "Flutter",
+            "iOS"
+          ],
+          "bio": "Ships polished apps on both platforms."
+        },
+        {
+          "name": "Dev P.",
+          "role": "DevOps Engineer",
+          "avatar": "DP",
+          "skills": [
+            "Kubernetes",
+            "Terraform",
+            "CI/CD"
+          ],
+          "bio": "Keeps everything running at 99.9% uptime."
+        },
+        {
+          "name": "Meera R.",
+          "role": "Project Manager",
+          "avatar": "MR",
+          "skills": [
+            "Agile",
+            "Jira",
+            "Client Relations"
+          ],
+          "bio": "Makes sure nothing falls through the cracks."
+        }
       ]
     },
     "trust": {
@@ -221,10 +526,26 @@
       "heading": "Our",
       "headingAccent": "Commitments",
       "items": [
-        { "icon": "ShieldCheck", "title": "Security First",       "desc": "OWASP best practices, dependency audits, and penetration testing on every project." },
-        { "icon": "FileText",    "title": "Full Documentation",   "desc": "Every handover includes architecture docs, runbooks, and a live knowledge-transfer session." },
-        { "icon": "RefreshCw",   "title": "Post-launch Warranty", "desc": "30-day bug-fix warranty on all projects. We stand behind our work." },
-        { "icon": "Lock",        "title": "NDA & IP Protection",  "desc": "Your code, your IP. We sign NDAs before any discovery call." }
+        {
+          "icon": "ShieldCheck",
+          "title": "Security First",
+          "desc": "OWASP best practices, dependency audits, and penetration testing on every project."
+        },
+        {
+          "icon": "FileText",
+          "title": "Full Documentation",
+          "desc": "Every handover includes architecture docs, runbooks, and a live knowledge-transfer session."
+        },
+        {
+          "icon": "RefreshCw",
+          "title": "Post-launch Warranty",
+          "desc": "30-day bug-fix warranty on all projects. We stand behind our work."
+        },
+        {
+          "icon": "Lock",
+          "title": "NDA & IP Protection",
+          "desc": "Your code, your IP. We sign NDAs before any discovery call."
+        }
       ]
     },
     "certifications": {
@@ -232,36 +553,79 @@
       "heading": "Recognised",
       "headingAccent": "Excellence",
       "items": [
-        { "icon": "Award",   "title": "AWS Certified Solutions Architect",  "issuer": "Amazon Web Services",   "year": "2023" },
-        { "icon": "Award",   "title": "Google Cloud Professional",          "issuer": "Google Cloud",           "year": "2022" },
-        { "icon": "Star",    "title": "Top Rated Agency",                   "issuer": "Clutch.co",              "year": "2024" },
-        { "icon": "Trophy",  "title": "Best Tech Startup — SF Tech Week",   "issuer": "SF Tech Awards",         "year": "2023" },
-        { "icon": "Shield",  "title": "ISO 27001 Compliant Practices",      "issuer": "Internal Audit",         "year": "2024" },
-        { "icon": "Users",   "title": "Certified Scrum Master (CSM)",       "issuer": "Scrum Alliance",         "year": "2021" }
+        {
+          "icon": "Award",
+          "title": "AWS Certified Solutions Architect",
+          "issuer": "Amazon Web Services",
+          "year": "2023"
+        },
+        {
+          "icon": "Award",
+          "title": "Google Cloud Professional",
+          "issuer": "Google Cloud",
+          "year": "2022"
+        },
+        {
+          "icon": "Star",
+          "title": "Top Rated Agency",
+          "issuer": "Clutch.co",
+          "year": "2024"
+        },
+        {
+          "icon": "Trophy",
+          "title": "Best Tech Startup \u2014 SF Tech Week",
+          "issuer": "SF Tech Awards",
+          "year": "2023"
+        },
+        {
+          "icon": "Shield",
+          "title": "ISO 27001 Compliant Practices",
+          "issuer": "Internal Audit",
+          "year": "2024"
+        },
+        {
+          "icon": "Users",
+          "title": "Certified Scrum Master (CSM)",
+          "issuer": "Scrum Alliance",
+          "year": "2021"
+        }
       ]
     },
     "highlights": [
-      "Agile, two‑week sprint cycles",
+      "Agile, two\u2011week sprint cycles",
       "Daily Slack updates (if you want them)",
-      "Fixed‑price or dedicated team options",
-      "Post‑launch warranty & support",
+      "Fixed\u2011price or dedicated team options",
+      "Post\u2011launch warranty & support",
       "Handover with full documentation",
       "Security & accessibility best practices"
     ],
     "techStack": [
-      "React", "Next.js", "TypeScript", "Node.js",
-      "PostgreSQL", "AWS", "Docker", "Figma",
-      "React Native", "GraphQL"
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "PostgreSQL",
+      "AWS",
+      "Docker",
+      "Figma",
+      "React Native",
+      "GraphQL"
     ],
     "badges": {
-      "topRated":    { "label": "5‑Star Rated",      "sub": "4.9 ★★★★★" },
-      "fastDelivery":{ "label": "On‑time Delivery",  "sub": "95% of projects" }
+      "topRated": {
+        "label": "5\u2011Star Rated",
+        "sub": "4.9 \u2605\u2605\u2605\u2605\u2605"
+      },
+      "fastDelivery": {
+        "label": "On\u2011time Delivery",
+        "sub": "95% of projects"
+      }
     },
     "codeSnippet": {
-      "mission":  "Build trust",
-      "passion":  "Clean code",
+      "mission": "Build trust",
+      "passion": "Clean code",
       "delivery": true,
-      "clients":  "Always first"
+      "clients": "Always first"
     }
   },
   "gallery": {
@@ -269,20 +633,98 @@
     "heading": "Behind the",
     "headingAccent": "Scenes",
     "subheading": "A glimpse into our projects, workspace, and the team that makes it happen.",
-    "categories": ["All", "Projects", "Team", "Workspace", "Events"],
+    "categories": [
+      "All",
+      "Projects",
+      "Team",
+      "Workspace",
+      "Events"
+    ],
     "items": [
-      { "id": "1",  "category": "Projects",  "emoji": "📊", "title": "PeakMetrics Dashboard",    "desc": "Real-time analytics UI" },
-      { "id": "2",  "category": "Projects",  "emoji": "🛍️", "title": "CraftCommerce Storefront", "desc": "Headless Shopify build" },
-      { "id": "3",  "category": "Projects",  "emoji": "🏥", "title": "DocTalk Telehealth",       "desc": "React Native mobile app" },
-      { "id": "4",  "category": "Projects",  "emoji": "✅", "title": "FlowSpace PM Tool",        "desc": "Kanban + Gantt SaaS" },
-      { "id": "5",  "category": "Projects",  "emoji": "🎓", "title": "LearnLoop LMS",            "desc": "Corporate learning platform" },
-      { "id": "6",  "category": "Projects",  "emoji": "🍕", "title": "BiteDash Food App",        "desc": "Multi-restaurant ordering" },
-      { "id": "7",  "category": "Team",      "emoji": "👨‍💻", "title": "Engineering Sprint",       "desc": "Two-week sprint kickoff" },
-      { "id": "8",  "category": "Team",      "emoji": "🎨", "title": "Design Review",            "desc": "Weekly design critique" },
-      { "id": "9",  "category": "Team",      "emoji": "🤝", "title": "Client Workshop",          "desc": "Discovery session" },
-      { "id": "10", "category": "Workspace", "emoji": "🖥️", "title": "Dev Setup",               "desc": "Our SF office" },
-      { "id": "11", "category": "Workspace", "emoji": "☕", "title": "Fuel Station",             "desc": "Where ideas happen" },
-      { "id": "12", "category": "Events",    "emoji": "🚀", "title": "SF Tech Week 2023",        "desc": "Best Tech Startup award" }
+      {
+        "id": "1",
+        "category": "Projects",
+        "emoji": "\ud83d\udcca",
+        "title": "PeakMetrics Dashboard",
+        "desc": "Real-time analytics UI"
+      },
+      {
+        "id": "2",
+        "category": "Projects",
+        "emoji": "\ud83d\udecd\ufe0f",
+        "title": "CraftCommerce Storefront",
+        "desc": "Headless Shopify build"
+      },
+      {
+        "id": "3",
+        "category": "Projects",
+        "emoji": "\ud83c\udfe5",
+        "title": "DocTalk Telehealth",
+        "desc": "React Native mobile app"
+      },
+      {
+        "id": "4",
+        "category": "Projects",
+        "emoji": "\u2705",
+        "title": "FlowSpace PM Tool",
+        "desc": "Kanban + Gantt SaaS"
+      },
+      {
+        "id": "5",
+        "category": "Projects",
+        "emoji": "\ud83c\udf93",
+        "title": "LearnLoop LMS",
+        "desc": "Corporate learning platform"
+      },
+      {
+        "id": "6",
+        "category": "Projects",
+        "emoji": "\ud83c\udf55",
+        "title": "BiteDash Food App",
+        "desc": "Multi-restaurant ordering"
+      },
+      {
+        "id": "7",
+        "category": "Team",
+        "emoji": "\ud83d\udc68\u200d\ud83d\udcbb",
+        "title": "Engineering Sprint",
+        "desc": "Two-week sprint kickoff"
+      },
+      {
+        "id": "8",
+        "category": "Team",
+        "emoji": "\ud83c\udfa8",
+        "title": "Design Review",
+        "desc": "Weekly design critique"
+      },
+      {
+        "id": "9",
+        "category": "Team",
+        "emoji": "\ud83e\udd1d",
+        "title": "Client Workshop",
+        "desc": "Discovery session"
+      },
+      {
+        "id": "10",
+        "category": "Workspace",
+        "emoji": "\ud83d\udda5\ufe0f",
+        "title": "Dev Setup",
+        "desc": "Our SF office"
+      },
+      {
+        "id": "11",
+        "category": "Workspace",
+        "emoji": "\u2615",
+        "title": "Fuel Station",
+        "desc": "Where ideas happen"
+      },
+      {
+        "id": "12",
+        "category": "Events",
+        "emoji": "\ud83d\ude80",
+        "title": "SF Tech Week 2023",
+        "desc": "Best Tech Startup award"
+      }
     ]
   },
   "contact": {
@@ -293,29 +735,64 @@
       "subheading": "Tell us about your project. We typically respond within one business day, often faster."
     },
     "info": [
-      { "icon": "Mail",    "label": "Email",    "value": "philecoders@gmail.com",              "href": "mailto:philecoders@gmail.com" },
-      { "icon": "Phone",   "label": "Phone",    "value": "+1 (415) 202‑8392",                  "href": "tel:+14152028392" },
-      { "icon": "MapPin",  "label": "Location", "value": "San Francisco, CA (Remote‑first)",   "href": "#map" }
+      {
+        "icon": "Mail",
+        "label": "Email",
+        "value": "philecoders@gmail.com",
+        "href": "mailto:philecoders@gmail.com"
+      },
+      {
+        "icon": "Phone",
+        "label": "Phone",
+        "value": "+1 (415) 202\u20118392",
+        "href": "tel:+14152028392"
+      },
+      {
+        "icon": "MapPin",
+        "label": "Location",
+        "value": "San Francisco, CA (Remote\u2011first)",
+        "href": "#map"
+      }
     ],
     "quickButtons": [
-      { "icon": "MessageCircle", "label": "WhatsApp",      "href": "https://wa.me/14152028392",              "color": "#25D366" },
-      { "icon": "Mail",          "label": "Send Email",    "href": "mailto:philecoders@gmail.com",           "color": "#0170f4" },
-      { "icon": "Phone",         "label": "Call Us",       "href": "tel:+14152028392",                       "color": "#0157c2" },
-      { "icon": "Calendar",      "label": "Book a Call",   "href": "https://calendly.com/philecoders",       "color": "#7c3aed" }
+      {
+        "icon": "MessageCircle",
+        "label": "WhatsApp",
+        "href": "https://wa.me/14152028392",
+        "color": "#25D366"
+      },
+      {
+        "icon": "Mail",
+        "label": "Send Email",
+        "href": "mailto:philecoders@gmail.com",
+        "color": "#0170f4"
+      },
+      {
+        "icon": "Phone",
+        "label": "Call Us",
+        "href": "tel:+14152028392",
+        "color": "#0157c2"
+      },
+      {
+        "icon": "Calendar",
+        "label": "Book a Call",
+        "href": "https://calendly.com/philecoders",
+        "color": "#7c3aed"
+      }
     ],
     "cta": {
-      "emoji": "🚀",
+      "emoji": "\ud83d\ude80",
       "heading": "Prefer a quick call?",
-      "text": "Most projects start with a free 30‑min discovery chat. No commitment, just honest advice."
+      "text": "Most projects start with a free 30\u2011min discovery chat. No commitment, just honest advice."
     },
     "form": {
-      "namePlaceholder":    "Your full name",
-      "emailPlaceholder":   "you@company.com",
+      "namePlaceholder": "Your full name",
+      "emailPlaceholder": "you@company.com",
       "subjectPlaceholder": "What's this about? (e.g., web app, mobile app)",
       "messagePlaceholder": "Describe your idea, timeline, and budget if you have one...",
-      "submitLabel":        "Send Message",
-      "successTitle":       "Message sent!",
-      "successText":        "We usually reply within a few hours during business days. Talk soon!"
+      "submitLabel": "Send Message",
+      "successTitle": "Message sent!",
+      "successText": "We usually reply within a few hours during business days. Talk soon!"
     },
     "map": {
       "embedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100939.98555098464!2d-122.50764017948551!3d37.75781499657613!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80859a6d00690021%3A0x4a501367f076adff!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
@@ -326,14 +803,92 @@
     "heading": "Recent",
     "headingAccent": "Projects",
     "subheading": "A few examples of what we've built recently. Names and specifics anonymized where requested.",
-    "categories": ["All", "Web App", "Mobile", "E-Commerce", "SaaS"],
+    "categories": [
+      "All",
+      "Web App",
+      "Mobile",
+      "E-Commerce",
+      "SaaS"
+    ],
     "projects": [
-      { "title": "PeakMetrics Dashboard", "category": "SaaS",       "description": "Real‑time analytics dashboard with custom charting and role‑based access, handling 2M+ data points daily.", "tags": ["Next.js", "TypeScript", "D3.js"],          "emoji": "📊", "liveUrl": "#", "sourceUrl": "#" },
-      { "title": "CraftCommerce",         "category": "E-Commerce", "description": "Headless Shopify storefront with custom inventory management and Stripe Connect payments.",              "tags": ["Hydrogen", "React", "Stripe"],            "emoji": "🛍️", "liveUrl": "#", "sourceUrl": "#" },
-      { "title": "DocTalk",               "category": "Mobile",     "description": "Telehealth app connecting patients with licensed therapists via secure video and chat.",                  "tags": ["React Native", "Firebase", "WebRTC"],     "emoji": "🏥", "liveUrl": "#", "sourceUrl": "#" },
-      { "title": "FlowSpace",             "category": "SaaS",       "description": "Project management tool with Kanban, Gantt, and native Slack integration for remote teams.",             "tags": ["Next.js", "PostgreSQL", "Socket.io"],    "emoji": "✅", "liveUrl": "#", "sourceUrl": "#" },
-      { "title": "LearnLoop",             "category": "Web App",    "description": "Corporate learning platform with SCORM compliance, progress badges, and admin dashboard.",             "tags": ["React", "AWS Lambda", "GraphQL"],        "emoji": "🎓", "liveUrl": "#", "sourceUrl": "#" },
-      { "title": "BiteDash",              "category": "Mobile",     "description": "Multi‑restaurant food ordering app with live GPS tracking and loyalty points.",                        "tags": ["Flutter", "Google Maps API", "Node.js"], "emoji": "🍕", "liveUrl": "#", "sourceUrl": "#" }
+      {
+        "title": "PeakMetrics Dashboard",
+        "category": "SaaS",
+        "description": "Real\u2011time analytics dashboard with custom charting and role\u2011based access, handling 2M+ data points daily.",
+        "tags": [
+          "Next.js",
+          "TypeScript",
+          "D3.js"
+        ],
+        "emoji": "\ud83d\udcca",
+        "liveUrl": "#",
+        "sourceUrl": "#"
+      },
+      {
+        "title": "CraftCommerce",
+        "category": "E-Commerce",
+        "description": "Headless Shopify storefront with custom inventory management and Stripe Connect payments.",
+        "tags": [
+          "Hydrogen",
+          "React",
+          "Stripe"
+        ],
+        "emoji": "\ud83d\udecd\ufe0f",
+        "liveUrl": "#",
+        "sourceUrl": "#"
+      },
+      {
+        "title": "DocTalk",
+        "category": "Mobile",
+        "description": "Telehealth app connecting patients with licensed therapists via secure video and chat.",
+        "tags": [
+          "React Native",
+          "Firebase",
+          "WebRTC"
+        ],
+        "emoji": "\ud83c\udfe5",
+        "liveUrl": "#",
+        "sourceUrl": "#"
+      },
+      {
+        "title": "FlowSpace",
+        "category": "SaaS",
+        "description": "Project management tool with Kanban, Gantt, and native Slack integration for remote teams.",
+        "tags": [
+          "Next.js",
+          "PostgreSQL",
+          "Socket.io"
+        ],
+        "emoji": "\u2705",
+        "liveUrl": "#",
+        "sourceUrl": "#"
+      },
+      {
+        "title": "LearnLoop",
+        "category": "Web App",
+        "description": "Corporate learning platform with SCORM compliance, progress badges, and admin dashboard.",
+        "tags": [
+          "React",
+          "AWS Lambda",
+          "GraphQL"
+        ],
+        "emoji": "\ud83c\udf93",
+        "liveUrl": "#",
+        "sourceUrl": "#"
+      },
+      {
+        "title": "BiteDash",
+        "category": "Mobile",
+        "description": "Multi\u2011restaurant food ordering app with live GPS tracking and loyalty points.",
+        "tags": [
+          "Flutter",
+          "Google Maps API",
+          "Node.js"
+        ],
+        "emoji": "\ud83c\udf55",
+        "liveUrl": "#",
+        "sourceUrl": "#"
+      }
     ]
   },
   "testimonials": {
@@ -341,27 +896,84 @@
     "heading": "What Our",
     "headingAccent": "Clients Say",
     "items": [
-      { "name": "Jamie Rivera",   "role": "COO, PeakMetrics",          "avatar": "JR", "rating": 5, "text": "PhileCoders didn't just build our dashboard — they helped us rethink the user experience. The performance under heavy load is outstanding. We've already renewed for a second phase." },
-      { "name": "Sam Chen",       "role": "Founder, CraftCommerce",    "avatar": "SC", "rating": 5, "text": "They brought our Shopify migration from idea to live in under 8 weeks. Communication was clear, and the final site feels lightning fast. Our conversion rate went up 20%." },
-      { "name": "Priya K.",       "role": "Head of Product, DocTalk",  "avatar": "PK", "rating": 5, "text": "Navigating healthcare compliance while delivering a polished UX is tough. PhileCoders handled it gracefully. Our patient onboarding time dropped by half." },
-      { "name": "David Müller",   "role": "Program Manager, LearnLoop","avatar": "DM", "rating": 5, "text": "On‑time, on‑budget, and the codebase is so clean our internal team could pick it up immediately. That handover quality is rare." },
-      { "name": "Aisha Al‑Rashid","role": "Director of Tech, BiteDash","avatar": "AR", "rating": 5, "text": "The team felt like an extension of our startup. They were proactive, suggested better ways to handle real‑time tracking, and delivered a beautiful app our users love." }
+      {
+        "name": "Jamie Rivera",
+        "role": "COO, PeakMetrics",
+        "avatar": "JR",
+        "rating": 5,
+        "text": "PhileCoders didn't just build our dashboard \u2014 they helped us rethink the user experience. The performance under heavy load is outstanding. We've already renewed for a second phase."
+      },
+      {
+        "name": "Sam Chen",
+        "role": "Founder, CraftCommerce",
+        "avatar": "SC",
+        "rating": 5,
+        "text": "They brought our Shopify migration from idea to live in under 8 weeks. Communication was clear, and the final site feels lightning fast. Our conversion rate went up 20%."
+      },
+      {
+        "name": "Priya K.",
+        "role": "Head of Product, DocTalk",
+        "avatar": "PK",
+        "rating": 5,
+        "text": "Navigating healthcare compliance while delivering a polished UX is tough. PhileCoders handled it gracefully. Our patient onboarding time dropped by half."
+      },
+      {
+        "name": "David M\u00fcller",
+        "role": "Program Manager, LearnLoop",
+        "avatar": "DM",
+        "rating": 5,
+        "text": "On\u2011time, on\u2011budget, and the codebase is so clean our internal team could pick it up immediately. That handover quality is rare."
+      },
+      {
+        "name": "Aisha Al\u2011Rashid",
+        "role": "Director of Tech, BiteDash",
+        "avatar": "AR",
+        "rating": 5,
+        "text": "The team felt like an extension of our startup. They were proactive, suggested better ways to handle real\u2011time tracking, and delivered a beautiful app our users love."
+      }
     ]
   },
   "footer": {
     "tagline": "PhileCoders builds fast, maintainable software that moves your business forward. No jargon, no surprises.",
     "socials": [
-      { "label": "GitHub",   "href": "https://github.com/nitishv-712" },
-      { "label": "LinkedIn", "href": "#" },
-      { "label": "Twitter",  "href": "#" },
-      { "label": "Email",    "href": "mailto:philecoders@gmail.com" }
+      {
+        "label": "GitHub",
+        "href": "https://github.com/nitishv-712"
+      },
+      {
+        "label": "LinkedIn",
+        "href": "#"
+      },
+      {
+        "label": "Twitter",
+        "href": "#"
+      },
+      {
+        "label": "Email",
+        "href": "mailto:philecoders@gmail.com"
+      }
     ],
     "links": {
-      "Company":  ["About", "Services", "Careers", "Blog"],
-      "Services": ["Web Development", "Mobile Apps", "UI/UX Design", "Backend & APIs", "Cloud & DevOps"],
-      "Legal":    ["Privacy Policy", "Terms of Service", "Cookie Policy"]
+      "Company": [
+        "Home",
+        "About",
+        "Services",
+        "Contact"
+      ],
+      "Services": [
+        "Web Development",
+        "Mobile Apps",
+        "UI/UX Design",
+        "Backend & APIs",
+        "Cloud & DevOps"
+      ],
+      "Legal": [
+        "Privacy Policy",
+        "Terms of Service",
+        "Cookie Policy"
+      ]
     },
-    "copyright": "© 2026 PhileCoders. All rights reserved.",
-    "builtWith": "Built with 💛 using Next.js & Tailwind CSS"
+    "copyright": "\u00a9 2026 PhileCoders. All rights reserved.",
+    "builtWith": "Built with \ud83d\udc9b using Next.js & Tailwind CSS"
   }
 }

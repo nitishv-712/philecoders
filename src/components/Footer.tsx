@@ -6,8 +6,10 @@ import Link from "next/link";
 import content from "@/content.json";
 
 const linkHrefMap: Record<string, string> = {
+  "Home":             "/",
   "About":            "/about",
   "Services":         "/services",
+  "Contact":          "/contact",
   "Careers":          "#",
   "Blog":             "#",
   "Web Development":  "/services/web-development",
@@ -44,11 +46,13 @@ export default function Footer() {
 
           {/* Brand */}
           <div className="lg:col-span-2">
-            <motion.div whileHover={{ scale: 1.02 }} className="flex items-center gap-2.5 mb-4">
-              <img src="/pc-only.png" alt="PhileCoders logo" width={48} height={32} style={{ imageRendering: "crisp-edges" }} />
-              <span className="font-bold text-[17px] tracking-tight" style={{ color: "var(--text-primary)" }}>
-                <span className="gradient-text">{site.name.slice(0, 5)}</span>{site.name.slice(5)}
-              </span>
+            <motion.div whileHover={{ scale: 1.02 }} className="mb-4">
+              <Link href="/" className="flex items-center gap-2.5">
+                <img src="/logo-icon.png" alt="PhileCoders logo" width={36} height={28} />
+                <span className="font-bold text-[17px] tracking-tight" style={{ color: "var(--text-primary)" }}>
+                  <span className="gradient-text">{site.name.slice(0, 5)}</span>{site.name.slice(5)}
+                </span>
+              </Link>
             </motion.div>
             <p className="text-sm leading-relaxed mb-6 max-w-xs" style={{ color: "var(--text-muted)" }}>
               {f.tagline}
