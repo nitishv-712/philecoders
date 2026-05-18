@@ -353,6 +353,126 @@
           "CDN & caching strategy",
           "Database query optimisation"
         ]
+      },
+      {
+        "slug": "digital-marketing",
+        "icon": "Megaphone",
+        "title": "Digital Marketing",
+        "description": "Full-funnel digital marketing strategies that grow your brand, traffic, and revenue online.",
+        "longDescription": "We craft and execute data-driven digital marketing strategies tailored to your business goals. From brand awareness to conversion optimisation, our team covers every channel needed to grow your online presence and bottom line.",
+        "tags": [
+          "Strategy",
+          "Analytics",
+          "Growth"
+        ],
+        "features": [
+          "Full-funnel marketing strategy",
+          "Audience research & segmentation",
+          "Multi-channel campaign management",
+          "Conversion rate optimisation",
+          "Performance reporting & dashboards",
+          "A/B testing & experimentation"
+        ]
+      },
+      {
+        "slug": "seo",
+        "icon": "Search",
+        "title": "Search Engine Optimization",
+        "description": "Technical and content SEO that improves your rankings, organic traffic, and domain authority.",
+        "longDescription": "We combine technical SEO, on-page optimisation, and authoritative link building to push your site to the top of search results. Every strategy is backed by keyword research and competitor analysis to target the terms that actually drive revenue.",
+        "tags": [
+          "On-Page SEO",
+          "Technical SEO",
+          "Link Building"
+        ],
+        "features": [
+          "Technical SEO audit & fixes",
+          "Keyword research & mapping",
+          "On-page content optimisation",
+          "Link building campaigns",
+          "Core Web Vitals improvements",
+          "Monthly ranking reports"
+        ]
+      },
+      {
+        "slug": "social-media-marketing",
+        "icon": "Share2",
+        "title": "Social Media Marketing",
+        "description": "Engaging content and paid campaigns across Instagram, LinkedIn, X, and more to grow your audience.",
+        "longDescription": "We manage your social presence end-to-end \u2014 from content calendars and creative production to community management and paid social campaigns. Our goal is to build an engaged audience that converts into loyal customers.",
+        "tags": [
+          "Instagram",
+          "LinkedIn",
+          "Paid Social"
+        ],
+        "features": [
+          "Platform strategy & setup",
+          "Content calendar & copywriting",
+          "Graphic & video creative",
+          "Community management",
+          "Paid social campaigns",
+          "Monthly analytics reports"
+        ]
+      },
+      {
+        "slug": "pay-per-click",
+        "icon": "MousePointerClick",
+        "title": "Pay Per Click",
+        "description": "ROI-focused Google Ads and Meta Ads campaigns that drive qualified traffic and maximise your ad spend.",
+        "longDescription": "We plan, launch, and continuously optimise PPC campaigns on Google, Meta, and beyond. Every campaign is built around your target CPA and ROAS, with rigorous A/B testing and weekly bid management to squeeze the most from your budget.",
+        "tags": [
+          "Google Ads",
+          "Meta Ads",
+          "ROAS"
+        ],
+        "features": [
+          "Campaign strategy & setup",
+          "Keyword & audience research",
+          "Ad copy & creative production",
+          "Bid management & optimisation",
+          "Landing page recommendations",
+          "Weekly performance reports"
+        ]
+      },
+      {
+        "slug": "email-marketing",
+        "icon": "Mail",
+        "title": "Email Marketing",
+        "description": "Automated email sequences and newsletters that nurture leads and drive repeat revenue.",
+        "longDescription": "We design, write, and automate email campaigns that keep your audience engaged at every stage of the funnel. From welcome sequences to re-engagement flows, we build systems that generate revenue on autopilot.",
+        "tags": [
+          "Automation",
+          "Newsletters",
+          "Drip Campaigns"
+        ],
+        "features": [
+          "Email strategy & list segmentation",
+          "Template design & copywriting",
+          "Automated drip sequences",
+          "Welcome & onboarding flows",
+          "A/B subject-line testing",
+          "Deliverability & open-rate optimisation"
+        ]
+      },
+      {
+        "slug": "lead-generation",
+        "icon": "Target",
+        "title": "Lead Generation",
+        "description": "Multi-channel lead gen systems that fill your pipeline with qualified prospects ready to buy.",
+        "longDescription": "We build end-to-end lead generation systems combining paid ads, landing pages, lead magnets, and CRM automation. The result is a predictable, scalable pipeline of qualified leads delivered directly to your sales team.",
+        "tags": [
+          "Paid Ads",
+          "Landing Pages",
+          "CRM"
+        ],
+        "features": [
+          "Lead gen strategy & funnel design",
+          "Landing page design & copywriting",
+          "Lead magnet creation",
+          "Paid ad campaigns",
+          "CRM integration & automation",
+          "Lead scoring & qualification"
+        ]
       }
     ]
   },
@@ -750,15 +870,15 @@
       {
         "icon": "MapPin",
         "label": "Location",
-        "value": "San Francisco, CA (Remote\u2011first)",
-        "href": "#map"
+        "value": "D Park, Sector-62, Noida",
+        "href": "https://www.google.com/maps/place/D+Park+Sector-62/@28.6151047,77.3668803,16.95z"
       }
     ],
     "quickButtons": [
       {
         "icon": "MessageCircle",
         "label": "WhatsApp",
-        "href": "https://wa.me/14152028392",
+        "href": "https://wa.me/+916202187680",
         "color": "#25D366"
       },
       {
@@ -770,7 +890,7 @@
       {
         "icon": "Phone",
         "label": "Call Us",
-        "href": "tel:+14152028392",
+        "href": "tel:+916202187680",
         "color": "#0157c2"
       },
       {
@@ -795,7 +915,7 @@
       "successText": "We usually reply within a few hours during business days. Talk soon!"
     },
     "map": {
-      "embedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100939.98555098464!2d-122.50764017948551!3d37.75781499657613!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80859a6d00690021%3A0x4a501367f076adff!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+      "embedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1751.15!2d77.3643539!3d28.6169033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce542fb30d6e7%3A0x769f37cb586f57b9!2sD+Park+Sector-62!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
     }
   },
   "portfolio": {
@@ -965,7 +1085,13 @@
         "Mobile Apps",
         "UI/UX Design",
         "Backend & APIs",
-        "Cloud & DevOps"
+        "Cloud & DevOps",
+        "Digital Marketing",
+        "SEO",
+        "Social Media Marketing",
+        "Pay Per Click",
+        "Email Marketing",
+        "Lead Generation"
       ],
       "Legal": [
         "Privacy Policy",
