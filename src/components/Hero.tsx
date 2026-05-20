@@ -1,12 +1,12 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import dynamic from "next/dynamic";
 import content from "@/content.json";
 
-const ParticleSwarm = dynamic(() => import("@/components/ParticleSwarm"), { ssr: false });
+const ParticleVortex = dynamic(() => import("@/components/ParticleVortex"), { ssr: false });
 
 const { hero } = content;
 
@@ -36,104 +36,7 @@ function TypewriterText() {
   );
 }
 
-function ParticleField() {
-  const [mounted, setMounted] = useState(false);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const mouseRef = useRef({ x: -1000, y: -1000 });
-  const rafRef = useRef<number>(0);
-  const particleRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-  useEffect(() => setMounted(true), []);
-
-  const particles = useMemo(() => {
-    const colors = ["#7c3aed", "#a78bfa", "#0170f4", "#34d399", "#c4b5fd"];
-    return Array.from({ length: 28 }, (_, i) => ({
-      id: i,
-      x: Math.random() * 96 + 2,
-      y: Math.random() * 96 + 2,
-      size: Math.random() * 4 + 3,
-      color: colors[i % colors.length],
-      opacity: Math.random() * 0.2 + 0.15,
-      isRing: i % 4 === 0,
-    }));
-  }, []);
-
-  useEffect(() => {
-    if (!mounted) return;
-
-    const handleMove = (e: MouseEvent) => {
-      if (!containerRef.current) return;
-      const rect = containerRef.current.getBoundingClientRect();
-      mouseRef.current = { x: e.clientX - rect.left, y: e.clientY - rect.top };
-    };
-
-    const animate = () => {
-      const { x: mx, y: my } = mouseRef.current;
-      const container = containerRef.current;
-      if (!container) { rafRef.current = requestAnimationFrame(animate); return; }
-      const w = container.offsetWidth;
-      const h = container.offsetHeight;
-
-      particleRefs.current.forEach((el, i) => {
-        if (!el) return;
-        const p = particles[i];
-        const px = (p.x / 100) * w;
-        const py = (p.y / 100) * h;
-        const dx = px - mx;
-        const dy = py - my;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        const radius = 220;
-
-        if (dist < radius && dist > 0) {
-          const force = (1 - dist / radius) * 45;
-          const offsetX = (dx / dist) * force;
-          const offsetY = (dy / dist) * force;
-          el.style.transform = `translate(${offsetX}px, ${offsetY}px) scale(${1 + (1 - dist / radius) * 0.4})`;
-          el.style.opacity = String(p.opacity + (1 - dist / radius) * 0.25);
-        } else {
-          el.style.transform = "translate(0px, 0px) scale(1)";
-          el.style.opacity = String(p.opacity);
-        }
-      });
-
-      rafRef.current = requestAnimationFrame(animate);
-    };
-
-    window.addEventListener("mousemove", handleMove);
-    rafRef.current = requestAnimationFrame(animate);
-
-    return () => {
-      window.removeEventListener("mousemove", handleMove);
-      cancelAnimationFrame(rafRef.current);
-    };
-  }, [mounted, particles]);
-
-  if (!mounted) return null;
-
-  return (
-    <div ref={containerRef} className="absolute inset-0 overflow-hidden pointer-events-none">
-      {particles.map((p, i) => (
-        <div
-          key={p.id}
-          ref={(el) => { particleRefs.current[i] = el; }}
-          className="absolute rounded-full"
-          style={{
-            left: `${p.x}%`,
-            top: `${p.y}%`,
-            width: p.size,
-            height: p.size,
-            ...(p.isRing
-              ? { border: `1.5px solid ${p.color}`, background: "transparent" }
-              : { background: p.color }),
-            opacity: p.opacity,
-            transition: "transform 0.3s ease-out, opacity 0.3s ease-out",
-            willChange: "transform, opacity",
-          }}
-        />
-      ))}
-    </div>
-  );
-}
 
 export default function Hero() {
   const ref = useRef<HTMLDivElement>(null);
@@ -170,15 +73,15 @@ export default function Hero() {
           className="absolute inset-0"
           initial={{ opacity: 0 }}
           animate={{ opacity: showParticles && inView ? 1 : 0 }}
-          transition={{ duration: 1.2, ease: "easeIn" }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
         >
-          {showParticles && inView && <ParticleSwarm />}
+          {showParticles && <ParticleVortex />}
         </motion.div>
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "linear-gradient(to right, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.3) 50%, transparent 100%)",
+              "radial-gradient(ellipse at center, transparent 20%, rgba(0,0,0,0.25) 60%, rgba(0,0,0,0.6) 100%)",
           }}
         />
       </div>
