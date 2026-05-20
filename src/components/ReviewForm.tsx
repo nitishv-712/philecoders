@@ -88,8 +88,9 @@ export default function ReviewForm({ serviceSlug }: { serviceSlug: string }) {
                     placeholder={f.placeholder}
                     value={form[f.id as keyof typeof form]}
                     onChange={(e) => setForm({ ...form, [f.id]: e.target.value })}
-                    className="w-full px-3 py-2.5 rounded-xl text-sm text-white placeholder-[#4a6080] outline-none transition-all"
-                    style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(167,139,250,0.15)" }}
+                    className="w-full px-3 py-2.5 rounded-xl text-sm placeholder-[#4a6080] outline-none transition-all"
+                    style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(167,139,250,0.15)", color: "var(--text-primary)" }}
+
                     onFocus={(e) => (e.target.style.borderColor = "#7c3aed")}
                     onBlur={(e)  => (e.target.style.borderColor = "rgba(167,139,250,0.15)")}
                   />
@@ -105,8 +106,8 @@ export default function ReviewForm({ serviceSlug }: { serviceSlug: string }) {
                 placeholder="Share your experience working with us..."
                 value={form.text}
                 onChange={(e) => setForm({ ...form, text: e.target.value })}
-                className="w-full px-3 py-2.5 rounded-xl text-sm text-white placeholder-[#4a6080] outline-none transition-all resize-none"
-                style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(143,187,249,0.15)" }}
+                className="w-full px-3 py-2.5 rounded-xl text-sm placeholder-[#4a6080] outline-none transition-all resize-none"
+                style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(143,187,249,0.15)", color: "var(--text-primary)" }}
                 onFocus={(e) => (e.target.style.borderColor = "#0170f4")}
                 onBlur={(e)  => (e.target.style.borderColor = "rgba(143,187,249,0.15)")}
               />
