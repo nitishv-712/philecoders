@@ -19,10 +19,20 @@ export default function ReviewForm({ serviceSlug }: { serviceSlug: string }) {
     setError("");
     setLoading(true);
     try {
-      await submitReview({ serviceSlug, rating, ...form });
+      await Promise.race([
+        submitReview({ serviceSlug, rating, ...form }),
+        new Promise((_, reject) => setTimeout(() => reject(new Error("timeout")), 10000)),
+      ]);
       setSubmitted(true);
-    } catch {
-      setError("Something went wrong. Please try again.");
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : "";
+      if (msg === "timeout") {
+        setError("Request timed out. Check your connection and try again.");
+      } else if (msg.includes("permission") || msg.includes("PERMISSION_DENIED")) {
+        setError("Submission blocked by server rules. Please contact us directly.");
+      } else {
+        setError("Something went wrong. Please try again.");
+      }
     } finally {
       setLoading(false);
     }
