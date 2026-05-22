@@ -585,59 +585,15 @@
           "bio": "10+ years building products from 0 to 1."
         },
         {
-          "name": "Priya S.",
+          "name": "Rajnish K.",
           "role": "UI/UX Lead",
-          "avatar": "PS",
+          "avatar": "RK",
           "skills": [
             "Figma",
             "Design Systems",
             "Research"
           ],
           "bio": "Obsessed with accessible, delightful interfaces."
-        },
-        {
-          "name": "Arjun M.",
-          "role": "Backend Engineer",
-          "avatar": "AM",
-          "skills": [
-            "PostgreSQL",
-            "GraphQL",
-            "Docker"
-          ],
-          "bio": "Loves distributed systems and clean APIs."
-        },
-        {
-          "name": "Sara K.",
-          "role": "Mobile Engineer",
-          "avatar": "SK",
-          "skills": [
-            "React Native",
-            "Flutter",
-            "iOS"
-          ],
-          "bio": "Ships polished apps on both platforms."
-        },
-        {
-          "name": "Dev P.",
-          "role": "DevOps Engineer",
-          "avatar": "DP",
-          "skills": [
-            "Kubernetes",
-            "Terraform",
-            "CI/CD"
-          ],
-          "bio": "Keeps everything running at 99.9% uptime."
-        },
-        {
-          "name": "Meera R.",
-          "role": "Project Manager",
-          "avatar": "MR",
-          "skills": [
-            "Agile",
-            "Jira",
-            "Client Relations"
-          ],
-          "bio": "Makes sure nothing falls through the cracks."
         }
       ]
     },
@@ -915,7 +871,7 @@
       "successText": "We usually reply within a few hours during business days. Talk soon!"
     },
     "map": {
-      "embedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1751.15!2d77.3643539!3d28.6169033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce542fb30d6e7%3A0x769f37cb586f57b9!2sD+Park+Sector-62!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+      "embedUrl": "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3499.0!2d77.2373!3d28.6542!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
     }
   },
   "portfolio": {
@@ -1061,12 +1017,12 @@
         "href": "https://github.com/nitishv-712"
       },
       {
-        "label": "LinkedIn",
-        "href": "#"
+        "label": "Instagram",
+        "href": "https://www.instagram.com/philecoders?igsh=MW04aG9iNzhpcGs5dQ=="
       },
       {
         "label": "Twitter",
-        "href": "#"
+        "href": "https://twitter.com/philecoders"
       },
       {
         "label": "Email",
