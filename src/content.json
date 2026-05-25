@@ -1036,11 +1036,21 @@
         "Services",
         "Contact"
       ],
-      "Services": [
+      "Dev Services": [
         "Web Development",
         "Mobile Apps",
         "UI/UX Design",
-        "Backend & APIs"
+        "Backend & APIs",
+        "Cloud & DevOps",
+        "Performance Tuning"
+      ],
+      "Marketing": [
+        "Digital Marketing",
+        "SEO",
+        "Pay Per Click",
+        "Social Media Marketing",
+        "Email Marketing",
+        "Lead Generation"
       ],
       "Legal": [
         "Privacy Policy",

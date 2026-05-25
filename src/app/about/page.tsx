@@ -7,16 +7,50 @@ import MissionVision from "@/components/about/MissionVision";
 import Team from "@/components/about/Team";
 import WhyTrustUs from "@/components/about/WhyTrustUs";
 import Certifications from "@/components/about/Certifications";
-import content from "@/content.json";
 
 export const metadata: Metadata = {
-  title: `About — ${content.site.name}`,
-  description: "Learn about PhileCoders — our story, mission, team, and values.",
+  title: "About PhileCoders — Our Story, Team & Mission",
+  description:
+    "Meet the PhileCoders team — senior engineers and designers who've shipped 48+ projects for startups and Fortune 500s. Learn our story, mission, and values.",
+  keywords: [
+    "about PhileCoders",
+    "software development team",
+    "senior engineers",
+    "tech company story",
+    "software agency mission",
+  ],
+  alternates: { canonical: "https://www.philecoders.com/about" },
+  openGraph: {
+    url: "https://www.philecoders.com/about",
+    title: "About PhileCoders — Our Story, Team & Mission",
+    description:
+      "A lean team of senior engineers and designers. 48+ projects shipped, 98% client retention. Learn what makes PhileCoders different.",
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  name: "About PhileCoders",
+  url: "https://www.philecoders.com/about",
+  description:
+    "PhileCoders is a software development company founded in 2018. We build web apps, mobile apps, and digital solutions for startups and enterprises.",
+  mainEntity: {
+    "@type": "Organization",
+    name: "PhileCoders",
+    foundingDate: "2018",
+    numberOfEmployees: { "@type": "QuantitativeValue", value: 12 },
+    url: "https://www.philecoders.com",
+  },
 };
 
 export default function AboutPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Navbar />
       <main>
         <AboutIntro />

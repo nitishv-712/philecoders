@@ -10,13 +10,14 @@ const linkHrefMap: Record<string, string> = {
   "About":            "/about",
   "Services":         "/services",
   "Contact":          "/contact",
-  "Careers":          "#",
-  "Blog":             "#",
+  "Careers":          "/contact",
+  "Blog":             "/contact",
   "Web Development":       "/services/web-development",
   "Mobile Apps":            "/services/mobile-apps",
   "UI/UX Design":           "/services/ui-ux-design",
   "Backend & APIs":         "/services/backend-apis",
   "Cloud & DevOps":         "/services/cloud-devops",
+  "Performance Tuning":     "/services/performance-tuning",
   "Digital Marketing":      "/services/digital-marketing",
   "SEO":                    "/services/seo",
   "Social Media Marketing": "/services/social-media-marketing",
@@ -31,7 +32,7 @@ const linkHrefMap: Record<string, string> = {
 const { footer: f, site } = content;
 
 const socialIconMap: Record<string, LucideIcon> = {
-  GitHub: GitFork, Twitter: X, LinkedIn: Link2, Email: Mail,
+  GitHub: GitFork, Twitter: X, LinkedIn: Link2, Email: Mail, Instagram: Link2,
 };
 
 const socialHoverColors: Record<string, string> = {

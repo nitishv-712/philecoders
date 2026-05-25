@@ -25,8 +25,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const service = content.services.items.find((s) => s.slug === slug);
   if (!service) return {};
   return {
-    title: `${service.title} — ${content.site.name}`,
-    description: service.description,
+    title: `${service.title} Services — PhileCoders`,
+    description: service.longDescription,
+    keywords: [service.title, ...service.tags, "PhileCoders", "software development"],
+    alternates: { canonical: `https://www.philecoders.com/services/${slug}` },
+    openGraph: {
+      url: `https://www.philecoders.com/services/${slug}`,
+      title: `${service.title} Services — PhileCoders`,
+      description: service.longDescription,
+    },
   };
 }
 
@@ -36,12 +43,29 @@ export default async function ServiceDetailPage({ params }: Props) {
   if (!service) notFound();
 
   const Icon = iconMap[service.icon] ?? Zap;
-
-  // Related services (exclude current)
   const related = content.services.items.filter((s) => s.slug !== slug).slice(0, 3);
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: service.title,
+    description: service.longDescription,
+    url: `https://www.philecoders.com/services/${slug}`,
+    provider: {
+      "@type": "Organization",
+      name: "PhileCoders",
+      url: "https://www.philecoders.com",
+    },
+    serviceType: service.title,
+    areaServed: "Worldwide",
+  };
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Navbar />
       <main className="min-h-screen" style={{ background: "var(--bg)" }}>
 
@@ -119,7 +143,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                   Tell us about your project and we&apos;ll get back to you within one business day.
                 </p>
                 <Link
-                  href="/#contact"
+                  href="/contact"
                   className="flex items-center justify-center gap-2 w-full py-3 rounded-xl font-semibold text-sm transition-all hover:scale-105"
                   style={{ background: "rgba(255,255,255,0.15)", backdropFilter: "blur(8px)" }}
                 >
