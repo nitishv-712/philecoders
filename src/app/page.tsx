@@ -11,27 +11,25 @@ const BASE_URL = "https://www.philecoders.com";
 const OG_IMAGE = `${BASE_URL}/og-image.png`;
 
 export const metadata: Metadata = {
-  title: "PhileCoders — #1 Web & Mobile App Development Company in India",
+  title: "PhileCoders — Web & Mobile App Development | India",
   description:
-    "PhileCoders builds custom web apps, mobile apps & digital solutions in Noida, India. 32+ happy clients, 48+ projects shipped, 98% retention. Book a free discovery call today.",
+    "Top-rated software dev company in Noida, India. Custom web apps, mobile apps, SEO & digital marketing. 32+ clients, 98% retention. Free call.",
   alternates: { canonical: BASE_URL },
   openGraph: {
     type: "website",
     locale: "en_US",
     url: BASE_URL,
     siteName: "PhileCoders",
-    title: "PhileCoders — #1 Web & Mobile App Development Company in India",
-    description:
-      "Top-rated software development company in Noida, India. We build fast, scalable web apps, mobile apps, and digital solutions. Free 30-min discovery call.",
+    title: "PhileCoders — Web & Mobile App Development | India",
     images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: "PhileCoders — Your Ideas, Engineered" }],
   },
   twitter: {
     card: "summary_large_image",
     site: "@philecoders",
     creator: "@philecoders",
-    title: "PhileCoders — #1 Web & Mobile App Development Company in India",
+    title: "PhileCoders — Web & Mobile App Development | India",
     description:
-      "Top-rated software dev company in Noida, India. Web apps, mobile apps, SEO & digital marketing. 32+ happy clients. Free quote.",
+      "Top-rated software development company in Noida, India. We build fast, scalable web apps, mobile apps, and digital solutions. Free 30-min discovery call.",
     images: [OG_IMAGE],
   },
 };

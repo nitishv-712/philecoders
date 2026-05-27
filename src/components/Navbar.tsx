@@ -55,7 +55,7 @@ export default function Navbar() {
                 />
                 <Image
                   src="/logo-icon-white.png"
-                  alt=""
+                  alt="PhileCoders logo"
                   width={36}
                   height={28}
                   priority
