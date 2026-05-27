@@ -31,11 +31,10 @@ export default function Navbar() {
       initial={{ y: -72, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.55, ease: "easeOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-white/85 backdrop-blur-2xl border-b border-[#c4dcfc]/40 shadow-lg shadow-[#7c3aed]/5"
-          : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
+        ? "bg-white/85 backdrop-blur-2xl border-b border-[#c4dcfc]/40 shadow-lg shadow-[#7c3aed]/5"
+        : "bg-transparent"
+        }`}
     >
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
         <div className="flex items-center justify-between h-16">
@@ -84,11 +83,10 @@ export default function Navbar() {
               <motion.div key={link.label} whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }}>
                 <Link
                   href={link.href}
-                  className={`relative px-4 py-2 text-sm font-medium rounded-full transition-colors block ${
-                    isActive(link.href)
-                      ? isHeroDark ? "text-white" : "text-[#7c3aed]"
-                      : isHeroDark ? "text-white/70 hover:text-white" : "text-[#4a6080] hover:text-[#10274b]"
-                  }`}
+                  className={`relative px-4 py-2 text-sm font-medium rounded-full transition-colors block ${isActive(link.href)
+                    ? isHeroDark ? "text-white" : "text-[#7c3aed]"
+                    : isHeroDark ? "text-white/70 hover:text-white" : "text-[#4a6080] hover:text-[#10274b]"
+                    }`}
                 >
                   {isActive(link.href) && (
                     <motion.span
@@ -112,11 +110,10 @@ export default function Navbar() {
             >
               <Link
                 href="/contact"
-                className={`flex items-center px-5 py-2 text-sm font-semibold rounded-full shadow-lg transition-all ${
-                  isHeroDark
-                    ? "text-[#0e1525] bg-white shadow-white/15 hover:bg-white/90"
-                    : "text-white shadow-[#7c3aed]/20"
-                }`}
+                className={`flex items-center px-5 py-2 text-sm font-semibold rounded-full shadow-lg transition-all ${isHeroDark
+                  ? "text-[#0e1525] bg-white shadow-white/15 hover:bg-white/90"
+                  : "text-white shadow-[#7c3aed]/20"
+                  }`}
                 style={isHeroDark ? undefined : { background: "linear-gradient(135deg, #0170f4 0%, #7c3aed 100%)" }}
               >
                 {navbar.cta}
@@ -127,9 +124,8 @@ export default function Navbar() {
               onClick={() => setIsOpen(!isOpen)}
               whileTap={{ scale: 0.9 }}
               aria-label={isOpen ? "Close menu" : "Open menu"}
-              className={`md:hidden w-9 h-9 rounded-full flex items-center justify-center ${
-                isHeroDark ? "bg-white/15 text-white" : "bg-[#ede9fe] text-[#7c3aed]"
-              }`}
+              className={`md:hidden w-9 h-9 rounded-full flex items-center justify-center ${isHeroDark ? "bg-white/15 text-white" : "bg-[#ede9fe] text-[#7c3aed]"
+                }`}
             >
               <AnimatePresence mode="wait">
                 {isOpen
