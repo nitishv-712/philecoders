@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { GitFork, Link2, X, Mail, ArrowUp, type LucideIcon } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import content from "@/content.json";
 
@@ -36,7 +37,7 @@ const socialIconMap: Record<string, LucideIcon> = {
 };
 
 const socialHoverColors: Record<string, string> = {
-  GitHub: "#a78bfa", Twitter: "#38bdf8", LinkedIn: "#0170f4", Email: "#7c3aed",
+  GitHub: "#a78bfa", Twitter: "#38bdf8", LinkedIn: "#0170f4", Email: "#7c3aed", Instagram: "#e1306c",
 };
 
 export default function Footer() {
@@ -54,8 +55,13 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <motion.div whileHover={{ scale: 1.02 }} className="mb-4">
-              <Link href="/" className="flex items-center gap-2.5">
-                <img src="/logo-icon.png" alt="PhileCoders logo" width={36} height={28} />
+              <Link href="/" className="flex items-center gap-2.5" aria-label="PhileCoders home">
+                <Image
+                  src="/logo-icon.png"
+                  alt="PhileCoders software development company logo"
+                  width={36}
+                  height={28}
+                />
                 <span className="font-bold text-[17px] tracking-tight" style={{ color: "var(--text-primary)" }}>
                   <span className="gradient-text">{site.name.slice(0, 5)}</span>{site.name.slice(5)}
                 </span>
@@ -72,7 +78,7 @@ export default function Footer() {
                   <motion.a
                     key={s.label}
                     href={s.href}
-                    aria-label={s.label}
+                    aria-label={`PhileCoders on ${s.label}`}
                     whileHover={{ scale: 1.15, y: -2 }}
                     whileTap={{ scale: 0.9 }}
                     target="_blank"
@@ -89,7 +95,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Links */}
+          {/* Link columns */}
           {Object.entries(f.links).map(([section, links]) => (
             <div key={section}>
               <h4 className="text-sm font-bold mb-4" style={{ color: "var(--text-primary)" }}>{section}</h4>
@@ -98,11 +104,11 @@ export default function Footer() {
                   <li key={link}>
                     <motion.div whileHover={{ x: 4 }} className="inline-block">
                       <Link
-                        href={linkHrefMap[link] ?? "#"}
+                        href={linkHrefMap[link] ?? "/"}
                         className="text-sm transition-colors"
-                        style={{ color: "var(--text-muted)" }}
+                        style={{ color: "#4b5563" }}
                         onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "#7c3aed")}
-                        onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "var(--text-muted)")}
+                        onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "#4b5563")}
                       >
                         {link}
                       </Link>
@@ -117,7 +123,6 @@ export default function Footer() {
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-3"
           style={{ borderTop: "1px solid var(--border-soft)" }}>
           <p className="text-xs" style={{ color: "var(--text-faint)" }}>{f.copyright}</p>
-          {/* <p className="text-xs px-3 py-1 rounded-full" style={{ color: "var(--text-faint)", background: "var(--badge-bg)" }}>{f.builtWith}</p> */}
           <motion.button
             onClick={scrollTop}
             whileHover={{ scale: 1.1, y: -2 }}

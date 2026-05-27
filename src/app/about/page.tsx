@@ -14,17 +14,25 @@ export const metadata: Metadata = {
     "Meet the PhileCoders team — senior engineers and designers who've shipped 48+ projects for startups and Fortune 500s. Learn our story, mission, and values.",
   keywords: [
     "about PhileCoders",
-    "software development team",
-    "senior engineers",
+    "software development team India",
+    "senior engineers Noida",
     "tech company story",
     "software agency mission",
   ],
   alternates: { canonical: "https://www.philecoders.com/about" },
   openGraph: {
+    type: "website",
+    locale: "en_US",
     url: "https://www.philecoders.com/about",
+    siteName: "PhileCoders",
     title: "About PhileCoders — Our Story, Team & Mission",
     description:
       "A lean team of senior engineers and designers. 48+ projects shipped, 98% client retention. Learn what makes PhileCoders different.",
+    images: [{ url: "https://www.philecoders.com/og-image.png", width: 1200, height: 630, alt: "PhileCoders team" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["https://www.philecoders.com/og-image.png"],
   },
 };
 

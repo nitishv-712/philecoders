@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import content from "@/content.json";
 
@@ -14,7 +15,6 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
 
-  /* True when hero is dark (homepage, not scrolled) */
   const isHeroDark = pathname === "/" && !scrolled;
 
   useEffect(() => {
@@ -31,36 +31,37 @@ export default function Navbar() {
       initial={{ y: -72, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.55, ease: "easeOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
           ? "bg-white/85 backdrop-blur-2xl border-b border-[#c4dcfc]/40 shadow-lg shadow-[#7c3aed]/5"
           : "bg-transparent"
-        }`}
+      }`}
     >
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
         <div className="flex items-center justify-between h-16">
 
           {/* Logo */}
           <motion.div whileHover={{ scale: 1.02 }}>
-            <Link href="/" className="flex items-center gap-2.5">
+            <Link href="/" className="flex items-center gap-2.5" aria-label="PhileCoders home">
               <span className="relative w-[36px] h-[28px] flex-shrink-0">
-                {/* Colored logo (light backgrounds) */}
-                <img
+                <Image
                   src="/logo-icon.png"
-                  alt="PhileCoders logo"
+                  alt="PhileCoders software development company"
                   width={36}
                   height={28}
+                  priority
                   className="absolute inset-0 w-full h-full object-contain transition-opacity duration-300"
                   style={{ opacity: isHeroDark ? 0 : 1 }}
                 />
-                {/* White logo (dark backgrounds) */}
-                <img
+                <Image
                   src="/logo-icon-white.png"
                   alt=""
                   width={36}
                   height={28}
+                  priority
+                  aria-hidden
                   className="absolute inset-0 w-full h-full object-contain transition-opacity duration-300"
                   style={{ opacity: isHeroDark ? 1 : 0 }}
-                  aria-hidden="true"
                 />
               </span>
               <span className="font-bold text-[17px] tracking-tight transition-colors duration-300">
@@ -83,10 +84,11 @@ export default function Navbar() {
               <motion.div key={link.label} whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }}>
                 <Link
                   href={link.href}
-                  className={`relative px-4 py-2 text-sm font-medium rounded-full transition-colors block ${isActive(link.href)
+                  className={`relative px-4 py-2 text-sm font-medium rounded-full transition-colors block ${
+                    isActive(link.href)
                       ? isHeroDark ? "text-white" : "text-[#7c3aed]"
                       : isHeroDark ? "text-white/70 hover:text-white" : "text-[#4a6080] hover:text-[#10274b]"
-                    }`}
+                  }`}
                 >
                   {isActive(link.href) && (
                     <motion.span
@@ -101,7 +103,7 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Right */}
+          {/* Right CTA */}
           <div className="flex items-center gap-2.5">
             <motion.div
               whileHover={{ scale: 1.05, boxShadow: "0 8px 28px rgba(124,58,237,0.30)" }}
@@ -110,10 +112,11 @@ export default function Navbar() {
             >
               <Link
                 href="/contact"
-                className={`flex items-center px-5 py-2 text-sm font-semibold rounded-full shadow-lg transition-all ${isHeroDark
+                className={`flex items-center px-5 py-2 text-sm font-semibold rounded-full shadow-lg transition-all ${
+                  isHeroDark
                     ? "text-[#0e1525] bg-white shadow-white/15 hover:bg-white/90"
                     : "text-white shadow-[#7c3aed]/20"
-                  }`}
+                }`}
                 style={isHeroDark ? undefined : { background: "linear-gradient(135deg, #0170f4 0%, #7c3aed 100%)" }}
               >
                 {navbar.cta}
@@ -123,8 +126,10 @@ export default function Navbar() {
             <motion.button
               onClick={() => setIsOpen(!isOpen)}
               whileTap={{ scale: 0.9 }}
-              className={`md:hidden w-9 h-9 rounded-full flex items-center justify-center ${isHeroDark ? "bg-white/15 text-white" : "bg-[#ede9fe] text-[#7c3aed]"
-                }`}
+              aria-label={isOpen ? "Close menu" : "Open menu"}
+              className={`md:hidden w-9 h-9 rounded-full flex items-center justify-center ${
+                isHeroDark ? "bg-white/15 text-white" : "bg-[#ede9fe] text-[#7c3aed]"
+              }`}
             >
               <AnimatePresence mode="wait">
                 {isOpen

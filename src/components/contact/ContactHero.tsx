@@ -1,11 +1,20 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin , type LucideIcon } from "lucide-react";
 import content from "@/content.json";
 
 const { contact: c } = content;
 const iconMap: Record<string, LucideIcon> = { Mail, Phone, MapPin };
+
+/* Obfuscate email — only rendered client-side after mount */
+function ObfuscatedValue({ value, isEmail }: { value: string; isEmail: boolean }) {
+  const [show, setShow] = useState(false);
+  useEffect(() => setShow(true), []);
+  if (!isEmail) return <>{value}</>;
+  return show ? <>{value}</> : <span aria-hidden>&#x2022;&#x2022;&#x2022;&#x2022;&#x2022;&#x2022;</span>;
+}
 
 export default function ContactHero() {
   return (
@@ -70,7 +79,9 @@ export default function ContactHero() {
                 </div>
                 <div>
                   <div className="text-xs font-semibold uppercase tracking-wide mb-0.5" style={{ color: "var(--text-muted)" }}>{item.label}</div>
-                  <div className="text-sm font-semibold" style={{ color: "var(--text-primary)" }}>{item.value}</div>
+                  <div className="text-sm font-semibold" style={{ color: "var(--text-primary)" }}>
+                    <ObfuscatedValue value={item.value} isEmail={item.icon === "Mail"} />
+                  </div>
                 </div>
               </motion.a>
             );

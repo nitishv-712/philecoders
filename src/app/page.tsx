@@ -7,53 +7,41 @@ import Services     from "@/components/Services";
 import CTA          from "@/components/CTA";
 import Footer       from "@/components/Footer";
 
+const BASE_URL = "https://www.philecoders.com";
+const OG_IMAGE = `${BASE_URL}/og-image.png`;
+
 export const metadata: Metadata = {
-  title: "PhileCoders — Custom Web & Mobile App Development Company",
+  title: "PhileCoders — #1 Web & Mobile App Development Company in India",
   description:
-    "PhileCoders builds custom web apps, mobile apps, and digital solutions. 32+ happy clients, 48+ projects shipped, 98% retention rate. Get a free discovery call today.",
-  alternates: { canonical: "https://www.philecoders.com" },
+    "PhileCoders builds custom web apps, mobile apps & digital solutions in Noida, India. 32+ happy clients, 48+ projects shipped, 98% retention. Book a free discovery call today.",
+  alternates: { canonical: BASE_URL },
   openGraph: {
-    url: "https://www.philecoders.com",
-    title: "PhileCoders — Custom Web & Mobile App Development Company",
+    type: "website",
+    locale: "en_US",
+    url: BASE_URL,
+    siteName: "PhileCoders",
+    title: "PhileCoders — #1 Web & Mobile App Development Company in India",
     description:
-      "Top-rated software development company. We build fast, scalable web apps, mobile apps, and digital solutions that grow your business.",
+      "Top-rated software development company in Noida, India. We build fast, scalable web apps, mobile apps, and digital solutions. Free 30-min discovery call.",
+    images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: "PhileCoders — Your Ideas, Engineered" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@philecoders",
+    creator: "@philecoders",
+    title: "PhileCoders — #1 Web & Mobile App Development Company in India",
+    description:
+      "Top-rated software dev company in Noida, India. Web apps, mobile apps, SEO & digital marketing. 32+ happy clients. Free quote.",
+    images: [OG_IMAGE],
   },
 };
 
-const jsonLd = {
+/* BreadcrumbList for homepage */
+const breadcrumbLd = {
   "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://www.philecoders.com/#organization",
-      name: "PhileCoders",
-      url: "https://www.philecoders.com",
-      logo: "https://www.philecoders.com/logo-icon.png",
-      contactPoint: {
-        "@type": "ContactPoint",
-        telephone: "+91-62021-87680",
-        contactType: "customer service",
-        email: "philecoders@gmail.com",
-        availableLanguage: "English",
-      },
-      sameAs: [
-        "https://github.com/nitishv-712",
-        "https://twitter.com/philecoders",
-        "https://www.instagram.com/philecoders",
-      ],
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://www.philecoders.com/#website",
-      url: "https://www.philecoders.com",
-      name: "PhileCoders",
-      publisher: { "@id": "https://www.philecoders.com/#organization" },
-      potentialAction: {
-        "@type": "SearchAction",
-        target: "https://www.philecoders.com/services?q={search_term_string}",
-        "query-input": "required name=search_term_string",
-      },
-    },
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
   ],
 };
 
@@ -62,7 +50,7 @@ export default function Home() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
       <Navbar />
       <main>

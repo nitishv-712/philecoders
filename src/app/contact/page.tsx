@@ -9,20 +9,28 @@ import QuickContact from "@/components/contact/QuickContact";
 export const metadata: Metadata = {
   title: "Contact PhileCoders — Get a Free Project Quote",
   description:
-    "Contact PhileCoders for a free 30-minute discovery call. We build custom web apps, mobile apps, and digital solutions. Response within one business day.",
+    "Contact PhileCoders for a free 30-minute discovery call. We build custom web apps, mobile apps, and digital solutions in Noida, India. Response within one business day.",
   keywords: [
     "contact PhileCoders",
-    "hire software developers",
+    "hire software developers India",
     "free project quote",
-    "software development consultation",
+    "software development consultation Noida",
     "web app development quote",
   ],
   alternates: { canonical: "https://www.philecoders.com/contact" },
   openGraph: {
+    type: "website",
+    locale: "en_US",
     url: "https://www.philecoders.com/contact",
+    siteName: "PhileCoders",
     title: "Contact PhileCoders — Get a Free Project Quote",
     description:
       "Book a free 30-minute discovery call with PhileCoders. Tell us about your project and get an honest quote within 48 hours.",
+    images: [{ url: "https://www.philecoders.com/og-image.png", width: 1200, height: 630, alt: "Contact PhileCoders" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["https://www.philecoders.com/og-image.png"],
   },
 };
 
