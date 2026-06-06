@@ -164,3 +164,89 @@ export async function getFirestoreBlogPostBySlug(slug: string): Promise<(BlogPos
     return null;
   }
 }
+
+// ── Reviews CRUD Admin Helpers ────────────────────────────────
+export async function updateReviewApproval(id: string, approved: boolean): Promise<void> {
+  const ref = doc(db, "reviews", id);
+  await updateDoc(ref, { approved });
+}
+
+export async function deleteReview(id: string): Promise<void> {
+  const ref = doc(db, "reviews", id);
+  await deleteDoc(ref);
+}
+
+// ── Contacts CRUD Admin Helpers ──────────────────────────────
+export async function getAllContacts(): Promise<(ContactSubmission & { id: string; createdAt?: string; read: boolean })[]> {
+  try {
+    const q = query(collection(db, "contacts"), orderBy("createdAt", "desc"));
+    const snap = await getDocs(q);
+    return snap.docs.map((d) => {
+      const data = d.data();
+      return {
+        id: d.id,
+        name: data.name || "",
+        email: data.email || "",
+        subject: data.subject || "",
+        message: data.message || "",
+        read: data.read || false,
+        createdAt: data.createdAt ? (data.createdAt as Timestamp).toDate().toLocaleString() : "",
+      };
+    });
+  } catch (err) {
+    console.error("Error getting contacts:", err);
+    return [];
+  }
+}
+
+export async function markContactAsRead(id: string): Promise<void> {
+  const ref = doc(db, "contacts", id);
+  await updateDoc(ref, { read: true });
+}
+
+export async function deleteContact(id: string): Promise<void> {
+  const ref = doc(db, "contacts", id);
+  await deleteDoc(ref);
+}
+
+// ── Subscribers Admin Helpers ───────────────────────────────
+export async function getAllSubscribers(): Promise<{ email: string; subscribedAt?: string }[]> {
+  try {
+    const q = query(collection(db, "subscribers"), orderBy("subscribedAt", "desc"));
+    const snap = await getDocs(q);
+    return snap.docs.map((d) => {
+      const data = d.data();
+      return {
+        email: d.id,
+        subscribedAt: data.subscribedAt ? (data.subscribedAt as Timestamp).toDate().toLocaleString() : "",
+      };
+    });
+  } catch (err) {
+    console.error("Error getting subscribers:", err);
+    return [];
+  }
+}
+
+export async function deleteSubscriber(email: string): Promise<void> {
+  const ref = doc(db, "subscribers", email);
+  await deleteDoc(ref);
+}
+
+// ── Analytics Admin Helpers ─────────────────────────────────
+export async function getAnalyticsStats(): Promise<{ page: string; views: number; lastVisited?: string }[]> {
+  try {
+    const q = query(collection(db, "analytics"), orderBy("views", "desc"));
+    const snap = await getDocs(q);
+    return snap.docs.map((d) => {
+      const data = d.data();
+      return {
+        page: data.page || d.id,
+        views: data.views || 0,
+        lastVisited: data.lastVisited ? (data.lastVisited as Timestamp).toDate().toLocaleString() : "",
+      };
+    });
+  } catch (err) {
+    console.error("Error getting analytics stats:", err);
+    return [];
+  }
+}

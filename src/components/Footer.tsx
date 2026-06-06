@@ -7,27 +7,27 @@ import Link from "next/link";
 import content from "@/content.json";
 
 const linkHrefMap: Record<string, string> = {
-  "Home":             "/",
-  "About":            "/about",
-  "Services":         "/services",
-  "Contact":          "/contact",
-  "Careers":          "/contact",
-  "Blog":             "/blog",
-  "Web Development":       "/services/web-development",
-  "Mobile Apps":            "/services/mobile-apps",
-  "UI/UX Design":           "/services/ui-ux-design",
-  "Backend & APIs":         "/services/backend-apis",
-  "Cloud & DevOps":         "/services/cloud-devops",
-  "Performance Tuning":     "/services/performance-tuning",
-  "Digital Marketing":      "/services/digital-marketing",
-  "SEO":                    "/services/seo",
+  "Home": "/",
+  "About": "/about",
+  "Services": "/services",
+  "Contact": "/contact",
+  "Careers": "/contact",
+  "Blog": "/blog",
+  "Web Development": "/services/web-development",
+  "Mobile Apps": "/services/mobile-apps",
+  "UI/UX Design": "/services/ui-ux-design",
+  "Backend & APIs": "/services/backend-apis",
+  "Cloud & DevOps": "/services/cloud-devops",
+  "Performance Tuning": "/services/performance-tuning",
+  "Digital Marketing": "/services/digital-marketing",
+  "SEO": "/services/seo",
   "Social Media Marketing": "/services/social-media-marketing",
-  "Pay Per Click":          "/services/pay-per-click",
-  "Email Marketing":        "/services/email-marketing",
-  "Lead Generation":        "/services/lead-generation",
-  "Privacy Policy":   "/legal/privacy-policy",
+  "Pay Per Click": "/services/pay-per-click",
+  "Email Marketing": "/services/email-marketing",
+  "Lead Generation": "/services/lead-generation",
+  "Privacy Policy": "/legal/privacy-policy",
   "Terms of Service": "/legal/terms-of-service",
-  "Cookie Policy":    "/legal/cookie-policy",
+  "Cookie Policy": "/legal/cookie-policy",
 };
 
 const { footer: f, site } = content;
@@ -122,7 +122,17 @@ export default function Footer() {
 
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-3"
           style={{ borderTop: "1px solid var(--border-soft)" }}>
-          <p className="text-xs" style={{ color: "var(--text-faint)" }}>{f.copyright}</p>
+          <div className="flex items-center gap-2 flex-wrap justify-center sm:justify-start">
+            <p className="text-xs" style={{ color: "var(--text-faint)" }}>{f.copyright}</p>
+            <span className="text-xs" style={{ color: "var(--text-faint)" }}>•</span>
+            <Link
+              href="/admin"
+              className="text-xs transition-colors hover:text-[#7c3aed]"
+              style={{ color: "var(--text-faint)" }}
+            >
+              Admin Portal
+            </Link>
+          </div>
           <motion.button
             onClick={scrollTop}
             whileHover={{ scale: 1.1, y: -2 }}
