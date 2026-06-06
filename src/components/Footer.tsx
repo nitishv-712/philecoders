@@ -12,7 +12,7 @@ const linkHrefMap: Record<string, string> = {
   "Services":         "/services",
   "Contact":          "/contact",
   "Careers":          "/contact",
-  "Blog":             "/contact",
+  "Blog":             "/blog",
   "Web Development":       "/services/web-development",
   "Mobile Apps":            "/services/mobile-apps",
   "UI/UX Design":           "/services/ui-ux-design",

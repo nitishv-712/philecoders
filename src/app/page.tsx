@@ -4,6 +4,7 @@ import Hero         from "@/components/Hero";
 import AboutPreview from "@/components/AboutPreview";
 import WhyChooseUs  from "@/components/WhyChooseUs";
 import Services     from "@/components/Services";
+import BlogPreview  from "@/components/BlogPreview";
 import CTA          from "@/components/CTA";
 import Footer       from "@/components/Footer";
 
@@ -56,6 +57,7 @@ export default function Home() {
         <AboutPreview />
         <WhyChooseUs />
         <Services />
+        <BlogPreview />
         <CTA />
       </main>
       <Footer />
