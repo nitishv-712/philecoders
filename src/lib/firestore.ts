@@ -2,9 +2,10 @@ import {
   collection, addDoc, getDocs, query,
   orderBy, serverTimestamp, where,
   doc, updateDoc, increment, setDoc, getDoc,
-  Timestamp,
+  deleteDoc, Timestamp,
 } from "firebase/firestore";
 import { db } from "./firebase";
+import { type BlogPost } from "@/data/blog";
 
 // ── Types ────────────────────────────────────────────────────
 
@@ -86,5 +87,80 @@ export async function trackPageView(page: string) {
     await updateDoc(ref, { views: increment(1), lastVisited: serverTimestamp() });
   } else {
     await setDoc(ref, { page, views: 1, lastVisited: serverTimestamp() });
+  }
+}
+
+// ── Blogs CRUD ───────────────────────────────────────────────
+
+export async function createBlogPost(data: Omit<BlogPost, "id">): Promise<string> {
+  const docRef = await addDoc(collection(db, "blogs"), {
+    ...data,
+    createdAt: serverTimestamp(),
+  });
+  return docRef.id;
+}
+
+export async function updateBlogPost(id: string, data: Partial<BlogPost>): Promise<void> {
+  const ref = doc(db, "blogs", id);
+  await updateDoc(ref, {
+    ...data,
+    updatedAt: serverTimestamp(),
+  });
+}
+
+export async function deleteBlogPost(id: string): Promise<void> {
+  const ref = doc(db, "blogs", id);
+  await deleteDoc(ref);
+}
+
+export async function getFirestoreBlogPosts(): Promise<(BlogPost & { id: string })[]> {
+  try {
+    const q = query(collection(db, "blogs"), orderBy("createdAt", "desc"));
+    const snap = await getDocs(q);
+    return snap.docs.map((d) => {
+      const data = d.data();
+      return {
+        id: d.id,
+        slug: data.slug || "",
+        title: data.title || "",
+        excerpt: data.excerpt || "",
+        content: data.content || "",
+        category: data.category || "Engineering",
+        date: data.date || "",
+        readTime: data.readTime || "",
+        tags: data.tags || [],
+        coverImage: data.coverImage || "",
+        author: data.author || { name: "", role: "", avatar: "" }
+      } as BlogPost & { id: string };
+    });
+  } catch (err) {
+    console.error("Error getting firestore blogs:", err);
+    return [];
+  }
+}
+
+export async function getFirestoreBlogPostBySlug(slug: string): Promise<(BlogPost & { id: string }) | null> {
+  try {
+    const q = query(collection(db, "blogs"), where("slug", "==", slug));
+    const snap = await getDocs(q);
+    if (snap.empty) return null;
+    const doc = snap.docs[0];
+    const data = doc.data();
+    return {
+      id: doc.id,
+      slug: data.slug || "",
+      title: data.title || "",
+      excerpt: data.excerpt || "",
+      content: data.content || "",
+      category: data.category || "Engineering",
+      date: data.date || "",
+      readTime: data.readTime || "",
+      tags: data.tags || [],
+      coverImage: data.coverImage || "",
+      author: data.author || { name: "", role: "", avatar: "" }
+    } as BlogPost & { id: string };
+  } catch (err) {
+    console.error("Error getting blog by slug:", err);
+    return null;
   }
 }

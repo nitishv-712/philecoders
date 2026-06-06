@@ -1,5 +1,6 @@
 import { initializeApp, getApps, getApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
+import { getAuth } from "firebase/auth";
 import { getAnalytics, isSupported } from "firebase/analytics";
 
 // ─────────────────────────────────────────────────────────────
@@ -18,10 +19,11 @@ const firebaseConfig = {
 
 const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
 const db  = getFirestore(app);
+const auth = getAuth(app);
 
 // Analytics is browser-only
 const analyticsPromise = typeof window !== "undefined"
   ? isSupported().then((ok) => ok ? getAnalytics(app) : null)
   : Promise.resolve(null);
 
-export { app, db, analyticsPromise };
+export { app, db, auth, analyticsPromise };

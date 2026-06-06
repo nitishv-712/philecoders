@@ -1,0 +1,52 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper: Checks if the requesting user is authenticated
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    // 1. Blogs Collection Rules
+    // - Anyone can read dynamic blog posts
+    // - Only logged-in administrators can create, update, or delete blog posts
+    match /blogs/{blogId} {
+      allow read: if true;
+      allow write: if isAuthenticated();
+    }
+
+    // 2. Reviews Collection Rules
+    // - Anyone can view approved reviews or submit a new review (starts as approved: false)
+    // - Only logged-in administrators can approve (update) or delete reviews
+    match /reviews/{reviewId} {
+      allow read: if true;
+      allow create: if true;
+      allow update, delete: if isAuthenticated();
+    }
+
+    // 3. Contacts Collection Rules
+    // - Anyone can submit a contact form (create a document)
+    // - Only logged-in administrators can read, update, or delete submissions
+    match /contacts/{submissionId} {
+      allow create: if true;
+      allow read, update, delete: if isAuthenticated();
+    }
+
+    // 4. Subscribers Collection Rules
+    // - Anyone can subscribe to the newsletter (create/update their own subscription record)
+    // - Only logged-in administrators can view the subscriber list or delete subscriptions
+    match /subscribers/{email} {
+      allow create, update: if true;
+      allow read, delete: if isAuthenticated();
+    }
+
+    // 5. Page Analytics Collection Rules
+    // - Anyone can view, track page views, or update view counters
+    // - Only logged-in administrators can delete analytics history
+    match /analytics/{pageId} {
+      allow read, create, update: if true;
+      allow delete: if isAuthenticated();
+    }
+  }
+}

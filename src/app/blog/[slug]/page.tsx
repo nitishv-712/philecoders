@@ -2,20 +2,33 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, Calendar, Clock } from "lucide-react";
-import { blogPosts } from "@/data/blog";
+import { blogPosts, type BlogPost } from "@/data/blog";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ShareButtons from "@/components/ShareButtons";
+import { getFirestoreBlogPostBySlug, getFirestoreBlogPosts } from "@/lib/firestore";
 
 type Props = { params: Promise<{ slug: string }> };
 
+export const revalidate = 10; // Incremental Static Regeneration cache duration (10s)
+
 export async function generateStaticParams() {
-  return blogPosts.map((post) => ({ slug: post.slug }));
+  try {
+    const dynamicPosts = await getFirestoreBlogPosts();
+    const all = [...dynamicPosts, ...blogPosts];
+    return all.map((post) => ({ slug: post.slug }));
+  } catch (err) {
+    console.error("Failed to generate static params for blogs:", err);
+    return blogPosts.map((post) => ({ slug: post.slug }));
+  }
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const post = blogPosts.find((p) => p.slug === slug);
+  let post = blogPosts.find((p) => p.slug === slug);
+  if (!post) {
+    post = (await getFirestoreBlogPostBySlug(slug)) || undefined;
+  }
   if (!post) return {};
   return {
     title: `${post.title} — PhileCoders Blog`,
@@ -40,11 +53,26 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function BlogPostDetailPage({ params }: Props) {
   const { slug } = await params;
-  const post = blogPosts.find((p) => p.slug === slug);
+  
+  let post = blogPosts.find((p) => p.slug === slug);
+  if (!post) {
+    const dbPost = await getFirestoreBlogPostBySlug(slug);
+    if (dbPost) {
+      post = dbPost;
+    }
+  }
   if (!post) notFound();
 
   // Find up to 2 related posts (other posts in the same category, or general other posts)
-  const relatedPosts = blogPosts
+  let allPosts: BlogPost[] = blogPosts;
+  try {
+    const dbPosts = await getFirestoreBlogPosts();
+    allPosts = [...dbPosts, ...blogPosts];
+  } catch (err) {
+    console.error("Failed to get all posts for related posts sidebar:", err);
+  }
+
+  const relatedPosts = allPosts
     .filter((p) => p.slug !== slug)
     .slice(0, 2);
 

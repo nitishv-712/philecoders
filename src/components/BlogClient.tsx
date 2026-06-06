@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, Calendar, Clock, ArrowRight, BookOpen } from "lucide-react";
 import Link from "next/link";
@@ -8,15 +8,32 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import { blogPosts, type BlogPost } from "@/data/blog";
+import { getFirestoreBlogPosts } from "@/lib/firestore";
 
 const CATEGORIES = ["All", "Engineering", "UI/UX Design", "Marketing"];
 
 export default function BlogClient() {
+  const [allPosts, setAllPosts] = useState<BlogPost[]>(blogPosts);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
 
+  useEffect(() => {
+    async function loadDynamicPosts() {
+      try {
+        const dynamicPosts = await getFirestoreBlogPosts();
+        if (dynamicPosts.length > 0) {
+          // Merge dynamic posts first, then the default static posts
+          setAllPosts([...dynamicPosts, ...blogPosts]);
+        }
+      } catch (err) {
+        console.error("Failed to load dynamic blog posts:", err);
+      }
+    }
+    loadDynamicPosts();
+  }, []);
+
   const filteredPosts = useMemo(() => {
-    return blogPosts.filter((post) => {
+    return allPosts.filter((post) => {
       const matchesSearch =
         post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         post.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -27,7 +44,7 @@ export default function BlogClient() {
 
       return matchesSearch && matchesCategory;
     });
-  }, [searchQuery, selectedCategory]);
+  }, [allPosts, searchQuery, selectedCategory]);
 
   // The first post is the featured post (only if no category/search filter is active, or if it matches the filter)
   const featuredPost = useMemo(() => {
